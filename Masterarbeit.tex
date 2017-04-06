@@ -1,0 +1,216 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage{amsmath, amssymb, amstext, amsfonts, mathrsfs}
+
+
+% \sffamily %schrift ohne Serifen
+
+\usepackage[T1]{fontenc} 
+% schriftencodierung für umlaute, trennung
+% f\"ur Uni
+\usepackage[latin1]{inputenc}
+\usepackage{selinput}
+% \usepackage[utf8x]{inputenc} 
+\usepackage{bibgerm} 
+% german bibliography
+\usepackage[german]{babel}
+%wichtig für deutschen Content
+\usepackage{ucs}
+%erweiterte UTF-8 Unterstützung
+\usepackage{wrapfig} 
+% Paket zur Positionierung einbinden
+\usepackage{multirow}
+% zusammenfassen von Tabellenzellen
+% \usepackage{subscript}
+% zum tiefstellen
+\usepackage{lscape}
+\usepackage{pdflscape}
+% zum drehen der Seite
+% \usepackage[super]{natbib}
+\usepackage[square,sort,comma,numbers]{natbib}
+% Erstellung es Literaturverzeichnisses
+\usepackage{url}
+% Umbruch für URL
+\usepackage{pst-3dplot}
+% für tex Grafiken nötig
+\usepackage{pstricks}
+\usepackage{listings}
+% für das einfügen von Quelltext
+\definecolor{codegray}{rgb}{0.92,0.92,0.92}
+\lstset{basicstyle=\fontsize{9}{11}\selectfont\ttfamily, breaklines=true, backgroundcolor=\color{codegray}, numbers=left, numberstyle=\tiny, tabsize=4, language=java}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\lstset{
+commentstyle=\color{mygreen},
+keywordstyle=\color{mymauve},
+language=Java,
+stringstyle=\color{blue}
+}
+
+
+%Einstellungen für Quellcode
+\usepackage[a4paper, left=3cm, right=2cm, top=2cm]{geometry}
+% Formatierung Ränder
+\usepackage[section]{placeins}
+% für Floatbarriere
+\usepackage{color}
+\usepackage{colortbl}
+%für die Verwendung von Farben
+
+\clubpenalty = 10000 
+\widowpenalty = 10000
+\displaywidowpenalty = 10000
+%Verhinderung von Hurenkindern und Schusterjungen
+%10000 bedeutet die sie sollen kommplett vermieden werden
+
+\title{Entwicklung einer Android-Applikation für die Alarmierung der Einsatzkräfte der Freiwilligen Feuerwehren}
+
+\author{Sebastian Rieger}
+
+\pagenumbering{arabic}
+%Seitenzahlen(arabische Zahlen)
+
+\setlength{\parindent}{0.25cm} 
+%Absatzeinzug ändern in Zoll
+\setlength{\parskip}{0.25cm}
+%Absatzabstand
+\linespread {1.5}
+%Zeilenabstand
+
+\usepackage{setspace}
+\usepackage{hyperref}
+%anklickbare Hyperlinks
+
+%funktioniert nicht bei Fußnoten
+\usepackage{graphicx}
+\usepackage{graphics}
+%für einbinden von Grafiken
+
+\usepackage{framed}
+%für Umrandung der Erklärung
+\usepackage{acronym}
+% für abkürzungen
+% \usepackage{PSTricks}
+\usepackage{epstopdf}
+% für eps bilder nutze pdflatex --shell-escape this.tex
+\usepackage{amssymb}
+% für mathematische Symbole
+
+\usepackage{hyperref}
+% klickbare links
+
+% \usepackage{pdfpages}
+\usepackage{rotating}
+\usepackage{svg}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Angaben zur Arbeit
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\Autor}{Sebastian Rieger}
+\newcommand{\MatrikelNummer}{10286908}
+\newcommand{\Kursbezeichnung}{TINF12B1}
+
+\newcommand{\FirmenName}{PDV Systeme}
+\newcommand{\FirmenStadt}{Erfurt}
+\newcommand{\FirmenLogoDeckblatt}{{\includegraphics[width=3cm]{}}}
+
+% Falls es kein Firmenlogo gibt:
+%  \newcommand{\FirmenLogoDeckblatt}{}
+
+\newcommand{\BetreuerFirma}{Prof. Rolf Kruse}
+\newcommand{\BetreuerDHBW}{Prof. Steffen Avemarg}
+\newcommand{\Titel}{Entwicklung eines Natural User Interface mit Hilfe moderner AR und AI Technologien}
+\newcommand{\AbgabeDatum}{01.12.2017}
+
+\newcommand{\Dauer}{24 Wochen}
+
+% \newcommand{\Abschluss}{Bachelor of Engineering}
+\newcommand{\Abschluss}{Master of Science}
+
+\newcommand{\Studiengang}{Angewandte Informatik}
+% \newcommand{\Studiengang}{Angewandte Informatik}
+\newcommand{\Was}{Masterarbeit}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%steuervariable
+\usepackage{ifthen} %Package für if/else
+\newboolean{bilder} %Deklaration
+\setboolean{bilder}{true} %Zuweisung
+% \setboolean{bilder}{false} %Zuweisung
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\lstdefinelanguage{JavaScript}{
+  keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+  keywordstyle=\color{blue}\bfseries,
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  ndkeywordstyle=\color{darkgray}\bfseries,
+  identifierstyle=\color{black},
+  sensitive=false,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  commentstyle=\color{purple}\ttfamily,
+  stringstyle=\color{red}\ttfamily,
+  morestring=[b]',
+  morestring=[b]"
+}
+
+
+\makeatletter
+\newcommand\footnoteref[1]{\protected@xdef\@thefnmark{\ref{#1}}\@footnotemark}
+\makeatother
+
+\begin{document}
+
+\begin{center}
+\vspace*{-2cm}
+\hfill\includegraphics[width=4cm]{Bilder/logo_FHE}\\[1cm]
+{\Huge \Titel}\\[2cm]
+{\Huge\scshape \Was}\\[2cm]
+% {\large für die Prüfung zum}\\[0.5cm]
+% {\Large \Abschluss}\\[0.5cm]
+% {\large des Studienganges \Studiengang}\\[0.5cm]
+{\large \Studiengang}\\[0.5cm]
+{\large an der}\\[0.5cm]
+{\large Fachhochschule Erfurt}\\[0.5cm]
+{\large von}\\[0.5cm]
+{\large\bfseries \Autor}\\[1cm]
+{\large Abgabedatum \AbgabeDatum}
+\vfill
+\end{center}
+\begin{tabular}{l@{\hspace{1cm}}l}
+Bearbeitungszeitraum             & \Dauer                       \\
+Matrikelnummer                   & \MatrikelNummer              \\
+% Kurs                             & \Kursbezeichnung             \\
+% Ausbildungsfirma                 & \FirmenName                  \\
+%                                  & \FirmenStadt                 \\
+Betreuer der Masterarbeit    & \BetreuerFirma               \\
+Zweitbetreuer der Masterarbeit     & \BetreuerDHBW                \\
+\end{tabular}
+
+\newpage
+%Seitenumbruch
+\include{erklaerung}
+\newpage
+\begin{spacing}{0.9}
+
+%Einfügen Inhaltsverzeichnis
+\tableofcontents
+\newpage
+\include{Einleitung}
+
+
+\end{spacing}
+
+\newpage
+\section{Abkürzungsverzeichnis}
+\input{Abkuerzungen}
+\newpage
+\listoffigures
+\newpage
+\listoftables
+% Abkürzungsverzeichnis
+\newpage
+\bibliographystyle{alpha}
+% verzeichnis im DIN format
+\bibliography{Quellen}
+\end{document}
