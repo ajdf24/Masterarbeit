@@ -23,5 +23,42 @@ Im medizinischen Umfeld, können Ärzten zum Beispiel Positionen von empfindlichen
 Im folgenden Abschnitt werden mögliche visuelle Ausgabegerätetypen genauer beschrieben und auf ihre Einsatzmöglichkeiten untersucht. 
 
 \subsubsection{Handheld-Geräte}
+Als Handheld werden in Geräte bezeichnet, die wie der Name schon sagt von einer Person in der Hand gehalten werden. Im \ac{AR}-Umfeld sind hier Smartphones oder Tablets gemeint, welche heutzutage durch ihre Dual- oder Quad-Core-Prozessoren und teilweise mehrere Gigabyte RAM in der Lage sind, auch komplexere \ac{AR}-Anwendungen zur Ausführung zu bringen. 
+
+In Smartphones und Tablets nimmt die Kamera das Bild der realen Welt auf und stellt es in Echtzeit auf dem Display dar. Ein Programm (App) ist dann in der Lage, die aufgenommene reale Welt um virtuelle Elemente zu erweitern und diese innerhalb des Kamerabildes auf dem Bildschirm zu platzieren. 
+
+Hierbei ergibt sich jedoch ein Problem, da sich der Blickwinkel es Betrachters vom Blickwinkel der Kamera unterscheidet, was zu einer unsauberen Platzierung der Objekte im Bild führt.
+In Abbildung \ref{hh_blick_img} ist zu sehen, wie sich der Blickwinkel der Kamera und der Blickwinkel des Betrachters unterscheiden.
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=10cm]{Bilder/hh_blick.png}
+\caption{Unterschiedliche Blickfelder von Betrachter und Kamera bei Handheld-AR \cite{VuAR}}
+\label{hh_blick_img}
+\centering
+\end{figure}
+
+Um den unterschied, zwischen den Blickwinkeln auszugleichen, muss das entsprechende Gerät die beiden Blickwinkel aufeinander abstimmen. Dies kann jedoch kein zur Zeit auf dem Markt befindliches Gerät leisten. 
+
+Einen ersten Ansatz herzu hat die University of California gemacht, indem sie ein Tablet mit einem Kinect Sensor verbunden haben. Mit Hilfe des zusätzlichen Sensors und dem "`KinectFusion Algorithmus"' konnten sie eine "`Magic Lens"' entwickeln, die beide Blickwinkel in etwa aufeinander abstimmt. \cite{MagicLens}
+
+In Abbildung \ref{magic_lens_img} ist einmal der Unterschied zwischen einer Aufnahme mit Magic Lens und ohne schematisch dargestellt. 
+
+Im linken Bildabschnitt ist gut zu sehen, das Bäume und andere Gegenstände im Bildschirm exakt an der Position in der realen Welt liegen. Im Gegensatz dazu sind Bäume und andere Gegenstände im rechten Bildabschnitt merklich verzerrt. 
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=10cm]{Bilder/magic_lens.png}
+\caption{Schematische Darstellung des Magic Lens Effekts \cite{VuAR}}
+\label{magic_lens_img}
+\centering
+\end{figure}
+
+Ein weiteres Problem ist, das \ac{AR}-Anwendungen für die optimale Skalierung und Platzierung von virtuellen Objekten im Raum zusätzlich Tiefeninformationen des aktuellen Bildes benötigen, denn nur dann ist auch gewährleistet, dass virtuelle Objekte in der richten Größe im realen Raum positioniert werde. 
+
+Dieses Problem versucht gerade das Projekt Tango von Google zu lösen. Mit Hilfe eines Lasers und einer Infrarotkamera können Tiefeninformationen zum aktuellen Bild aufgenommen und verarbeitet werde. \cite{Tango} 
+
+Nur mit der Tango Technologie ist es bisher möglich, AR-Objekte richtig skaliert und im richtigen Blickwinkel präzise im Raum zu positionieren.  Weitergehende Informationen sind auf den Developer-Seiten\footnote{\url{https://get.google.com/tango/}} von Google zu finden. Bisher unterstützen jedoch nur das "`Lenovo Phab2"' und das "`Asus ZenFon AR"' diese Technologie, da hier eine zusätzliche Sensoreinheit im Smartphone verbaut sein muss.
+
 
 \subsubsection{Video-See-Throuth-Displays}
