@@ -22,7 +22,7 @@ Im medizinischen Umfeld, können Ärzten zum Beispiel Positionen von empfindlichen
 \subsection{Typen von visuelle Ausgabegeräte}
 Im folgenden Abschnitt werden mögliche visuelle Ausgabegerätetypen genauer beschrieben und auf ihre Einsatzmöglichkeiten untersucht. 
 
-\subsubsection{Handheld-Geräte}
+\subsubsection{Handheld-Geräte} \label{Handheld-Geräte}
 Als Handheld werden in Geräte bezeichnet, die wie der Name schon sagt von einer Person in der Hand gehalten werden. Im \ac{AR}-Umfeld sind hier Smartphones oder Tablets gemeint, welche heutzutage durch ihre Dual- oder Quad-Core-Prozessoren und teilweise mehrere Gigabyte RAM in der Lage sind, auch komplexere \ac{AR}-Anwendungen zur Ausführung zu bringen. 
 
 In Smartphones und Tablets nimmt die Kamera das Bild der realen Welt auf und stellt es in Echtzeit auf dem Display dar. Ein Programm (App) ist dann in der Lage, die aufgenommene reale Welt um virtuelle Elemente zu erweitern und diese innerhalb des Kamerabildes auf dem Bildschirm zu platzieren. 
@@ -105,7 +105,47 @@ Die HoloLens ist standardmäßig in der Lage, grundlegende Gesten zu erkennen, mit
 Auf genauere technische Details zur Programmierung der HoloLens wird im Kapitel ????? genauer eingegangen.
 
 Eine Besonderheit der HoloLens ist natürlich das mit Microsoft ein großer Softwarekonzern hinter der Entwicklung steht und somit ein schnelles voranschreiten der Technik quasi sicher ist.
-
+\newpage
 \paragraph{Die Epson Moverio BT-200}
+eine weitere \ac{AR}-Brille ist die sogenannte Epson Moverio BT-200, welche auf Android-Basis arbeitet. Im Gegensatz zur HoloLens, kann die Moverio wie eine normale Brille getragen werden und sieht auch so aus. 
+
+\begin{wrapfigure}{r}{4cm}
+\centering
+\includegraphics[width=4cm]{Bilder/moverio.jpg}
+\caption{Epson Moverio mit Controller \cite{MovImg}}
+\label{mov_img}
+\vspace{-10pt}
+\end{wrapfigure}
+
+Intern sorgt ein nicht genauer benannter 1,2 GHz Dual-Core-Prozessor für die nötige Rechenleistung. Die Brille verfügt über 8 Gigabyte Speicher, der sich mittels SD-Karten erweitern lässt. 
+
+Ähnlich wie die HoloLens verfügt auch die Moverio über eine Tiefenbildkamera, welche es ermöglicht \ac{AR}-Inhalte exakt zu platzieren. Ein Beschleunigungssensor registriert zusätzlich die Bewegungen des Kopfes des Trägers.
+
+Gesteuert wird die Brille über ein Controller-Kästchen, welche im Lieferumfang enthalten ist. Dieses verfügt zur Steuerung verschiedene Button wie Home oder Zurück, welche auch von Android bekannt sind. Zusätzlich kann das System über einen eingebauten Touchscreen im Controller Gesten des Nutzers erkennen und interpretieren. 
+
+Der Akku soll 6 Stunden durchhalten, was ein längeres Vergnügen verspricht, als es bei der HoloLens gegeben ist.
+
+Der "`Google Play"'-Store ist auf der Brille nicht verfügbar, jedoch portiert Epson einige Anwendungen damit diese auf der Brille Lauffähig sind.
+
 
 \subsection{Auswertung der Möglichkeiten für ein Natural User Interface}
+Für die Erstellung eines \ac{NUI} gibt es Frontendseitig zwei Möglichkeiten. Zum einen gibt es die Handheld-Geräte, zum anderen gibt es noch die \ac{AR}-Brillen. 
+
+Als Handheld-Gerät kann heute fast schon jedes Smartphones oder Tablet verwendet werden. Ohne eine eingebaute Magic-Lens \ref{Handheld-Geräte} oder die Google Tango Technologie, ist das präzise arbeiten mit solchen Geräten nicht möglich. Hinzu kommt noch, das der Benutzer des Interfaces immer mit einer Hand das entsprechende Gerät halten muss, wodurch diese dann nicht mehr zum Arbeiten zur Verfügung steht. 
+
+Das ständige halten eines Smartphones oder Tablets ist auch anstrengend für den Nutzer und seine Armmuskulatur. 
+
+Handheld-Geräte sind eine gute und auch einfache Lösung um Filme zu schauen oder Spiele zu spielen. Eine Langzeitnutzung wie in einem 8 stündigen Arbeitstag steht jedoch außer Frage.
+
+Hier kommen die \ac{AR}-Brillen ins Spiel. Sie ermöglichen eine Anreicherung der realen Welt ohne dass ein Nutzer permanent ein Gerät halten muss, da die Brillen durch die natürliche Kopfform halten.
+
+Die Epson Moverio Brille ist ein erster Ansatz um \ac{AR}-Brillen einer breiten Masse zur Verfügung zu stellen. Jedoch kann sie durch viele Nachteile nicht mit der HoloLens mithalten.
+Im Gegensatz zur Moverio kann sich die HoloLens selbstständig im Raum orientieren.
+
+Ein weiterer K.O.-Punkt ist, dass die HoloLens Handgesten des Nutzers direkt erkennt ohne wie bei der Moverio auf ein zusätzlichen Controller zurück greifen zu müssen.
+
+Im Vergleich zu Handheld-Geräten ist die Moverio nicht besser, da auch ständig ein Gerät zur Steuerung in der Hand des Nutzers verbleiben muss und somit nicht frei für andere Aufgaben ist.
+
+Die Microsoft HoloLens ist bisher die einzige Möglichkeit um ein \ac{NUI} zu entwickeln, wie es die Arbeit vorsieht. Sie kann völlig freihändig gesteuert werden ohne das der Nutzer zusätzliche Hardware zum steuern oder Anzeigen in der Hand halten muss. 
+
+Im Verlauf der Arbeit wird durch die klare Überlegenheit der HoloLens diese als einzige weiter betrachtet und für die Entwicklung verwendet. Alle anderen alternativen konnten nicht überzeugen.
