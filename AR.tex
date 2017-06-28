@@ -141,7 +141,29 @@ Der "`Google Play"'-Store ist auf der Brille nicht verfügbar, jedoch portiert Ep
 \subsection{Auswertung der Möglichkeiten für ein Natural User Interface}
 Für die Erstellung eines \ac{NUI} gibt es Frontendseitig zwei Möglichkeiten. Zum einen gibt es die Handheld-Geräte, zum anderen gibt es noch die \ac{AR}-Brillen. 
 
-Als Handheld-Gerät kann heute fast schon jedes Smartphones oder Tablet verwendet werden. Ohne eine eingebaute Magic-Lens \ref{Handheld-Geräte} oder die Google Tango Technologie, ist das präzise arbeiten mit solchen Geräten nicht möglich. Hinzu kommt noch, das der Benutzer des Interfaces immer mit einer Hand das entsprechende Gerät halten muss, wodurch diese dann nicht mehr zum Arbeiten zur Verfügung steht. 
+Als Handheld-Gerät kann heute fast schon jedes Smartphones oder Tablet verwendet werden. Ohne eine eingebaute Magic-Lens \ref{Handheld-Geräte} oder die Google Tango Technologie, ist das präzise arbeiten mit solchen Geräten nicht möglich. Hinzu kommt noch, das der Benutzer des Interfaces immer mit einer Hand das entsprechende Gerät halten muss, wodurch diese dann nicht mehr zum Arbeiten zur Verfügung steht. In der Tabelle \ref{Gerätemvergleich} wurden alle Handheld Geräte zusammen betrachtet, da es hier praktisch keine unterscheide gibt.
+
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+ Anforderung 			& Priorisierung & Handheld Geräte		& HoloLens			& Moverio BT-200 	\\ \hline		
+ 
+ Freihändig bedienbar 		& sehr hoch 	& \textcolor{red}{X} 		& \textcolor{green}{\checkmark} & \textcolor{red}{X} \\ \hline
+ 
+ exakte \ac{AR}-Inhalte		& hoch 		& \textcolor{red}{X} 		& \textcolor{green}{\checkmark} & \textcolor{green}{\checkmark} \\ \hline
+ 
+ Handgestenerkennung		& sehr hoch 	& \textcolor{green}{\checkmark} & \textcolor{green}{\checkmark} & \textcolor{green}{\checkmark} \\ \hline
+ 
+ Spracherkennung		& sehr hoch	& \textcolor{green}{\checkmark} & \textcolor{green}{\checkmark} & \textcolor{green}{\checkmark}	\\ \hline
+ 
+ 
+ 
+\end{tabular}
+\end{center}
+\caption{Tabellarischer Vergleich der betrachteten Geräte}
+\label{Gerätemvergleich}
+\end{table}
 
 Das ständige halten eines Smartphones oder Tablets ist auch anstrengend für den Nutzer und seine Armmuskulatur. 
 
@@ -156,29 +178,8 @@ Ein weiterer K.O.-Punkt ist, dass die HoloLens Handgesten des Nutzers direkt erk
 
 Im Vergleich zu Handheld-Geräten ist die Moverio nicht besser, da auch ständig ein Gerät zur Steuerung in der Hand des Nutzers verbleiben muss und somit nicht frei für andere Aufgaben ist.
 
-Die Microsoft HoloLens ist bisher die einzige Möglichkeit um ein \ac{NUI} zu entwickeln, wie es die Arbeit vorsieht. Sie kann völlig freihändig gesteuert werden ohne das der Nutzer zusätzliche Hardware zum steuern oder Anzeigen in der Hand halten muss. 
+Die Microsoft HoloLens ist bisher die einzige Möglichkeit um ein \ac{NUI} zu entwickeln, wie es die Arbeit vorsieht. Dies geht auch aus Tabelle \ref{Gerätemvergleich} hervor. Sie kann völlig freihändig gesteuert werden ohne das der Nutzer zusätzliche Hardware zum steuern oder Anzeigen in der Hand halten muss. 
 
 Im Verlauf der Arbeit wird durch die klare Überlegenheit der HoloLens diese als einzige weiter betrachtet und für die Entwicklung verwendet. Alle anderen alternativen konnten nicht überzeugen.
 
 
-\begin{table}[htbp]
-\begin{center}
-\begin{tabular}{|c|c|c|c|c|c|}
-\hline
- Anforderung 			& Priorisierung & Handheld Geräte		& Microsoft HoloLens		& Epson Moverio BT-200 			& Spracherkennung
- 
- Freihändig bedienbar 		& sehr hoch 	& \textcolor{green}{\checkmark} & \textcolor{green}{\checkmark} & \textcolor{green}{\checkmark} 	& \textcolor{green}{\checkmark}\\ \hline
- 
- exakte \ac{AR}-Inhalte		& sehr hoch 	& \textcolor{green}{\checkmark} & \textcolor{green}{\checkmark} & \textcolor{orange}{\checkmark X} 	& \textcolor{orange}{\checkmark X} \\ \hline
- 
- Handgestenerkennung		& gering 	& \textcolor{green}{\checkmark} & \textcolor{green}{\checkmark} & \textcolor{green}{\checkmark} 	& \textcolor{green}{\checkmark} \\ \hline
- 
- Spracherkennung		& hoch 		&\textcolor{green}{\checkmark} 	& \textcolor{green}{\checkmark} & \textcolor{red}{X}		 	& \textcolor{orange}{\checkmark X} \\ \hline
- 
- 
- 
-\end{tabular}
-\end{center}
-\caption{Tabellarischer Vergleich der betrachteten Systeme}
-\label{Systemvergleich}
-\end{table}
