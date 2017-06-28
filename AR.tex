@@ -19,6 +19,16 @@ Der Begriff der \ac{AV} ist heute weniger gebräuchlich, da es keine wirklichen A
 
 Im medizinischen Umfeld, können Ärzten zum Beispiel Positionen von empfindlichen Gewebe oder zu entfernenden Fremdkörpern bei einer Operation angezeigt werden. Eine andere Einsatzmöglichkeit wäre das unterstützende Anzeigen von Gefahren oder Fluchtwegen für Feuerwehrleute, die sich einem stark verrauchten Brandobjekt befinden. Computer können durch Infrarot und Wärmebild das Sichtvermögen eines Feuerwehrmannes in einer Gefahrensituation so entscheidend erhöhen um sich selbst und andere zu retten.
 
+Ein Gerät, welches später für die Erstellung eines \ac{NUI} dienen kann muss folgende Kriterien erfüllen:
+\begin{itemize}
+ \item Das Gerät muss Freihändig bedienbar sein
+ \item Das Gerät muss die \ac{AR}-Inhalte exakt zur realen Welt wiedergeben
+%  \item Das Gerät muss ausreichende Hardware für die Anwendung haben
+ \item Das Gerät muss Handgesten und Sprache des Nutzers erkennen können
+%  \item Das Gerät muss über eine Internetverbindung verfügen
+\end{itemize}
+
+
 \subsection{Typen von visuelle Ausgabegeräte}
 Im folgenden Abschnitt werden mögliche visuelle Ausgabegerätetypen genauer beschrieben und auf ihre Einsatzmöglichkeiten untersucht. 
 
@@ -149,3 +159,26 @@ Im Vergleich zu Handheld-Geräten ist die Moverio nicht besser, da auch ständig e
 Die Microsoft HoloLens ist bisher die einzige Möglichkeit um ein \ac{NUI} zu entwickeln, wie es die Arbeit vorsieht. Sie kann völlig freihändig gesteuert werden ohne das der Nutzer zusätzliche Hardware zum steuern oder Anzeigen in der Hand halten muss. 
 
 Im Verlauf der Arbeit wird durch die klare Überlegenheit der HoloLens diese als einzige weiter betrachtet und für die Entwicklung verwendet. Alle anderen alternativen konnten nicht überzeugen.
+
+
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+ Anforderung 			& Priorisierung & Handheld Geräte		& Microsoft HoloLens		& Epson Moverio BT-200 			& Spracherkennung
+ 
+ Freihändig bedienbar 		& sehr hoch 	& \textcolor{green}{\checkmark} & \textcolor{green}{\checkmark} & \textcolor{green}{\checkmark} 	& \textcolor{green}{\checkmark}\\ \hline
+ 
+ exakte \ac{AR}-Inhalte		& sehr hoch 	& \textcolor{green}{\checkmark} & \textcolor{green}{\checkmark} & \textcolor{orange}{\checkmark X} 	& \textcolor{orange}{\checkmark X} \\ \hline
+ 
+ Handgestenerkennung		& gering 	& \textcolor{green}{\checkmark} & \textcolor{green}{\checkmark} & \textcolor{green}{\checkmark} 	& \textcolor{green}{\checkmark} \\ \hline
+ 
+ Spracherkennung		& hoch 		&\textcolor{green}{\checkmark} 	& \textcolor{green}{\checkmark} & \textcolor{red}{X}		 	& \textcolor{orange}{\checkmark X} \\ \hline
+ 
+ 
+ 
+\end{tabular}
+\end{center}
+\caption{Tabellarischer Vergleich der betrachteten Systeme}
+\label{Systemvergleich}
+\end{table}
