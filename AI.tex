@@ -5,23 +5,18 @@ In der heutigen Zeit werden Systeme und Algorithmen die auf neuronalen Netzen ba
 
 Es gibt aber auch intelligente Systeme wie "`IBM Watson"', welche nicht auf neuronalen Netzen basieren und annähernd intelligent wirken. Diese Intelligenz ist das Resultat einer sehr großen Wissensbasis und verschiedenen kombinatorischen Algorithmen. Um zu zeigen wie Leistungsfähig Watson ist, trat er 2011 in der Quizshow "`Jeopardy"' an und gewann gegen die weltbesten Spieler. \cite{IBMWatson}
 
-Im allgemeinen Sprachgebrauch werden als \ac{AI} heute üblichen Sprachassistenten wie Siri, Alexa, Cortana oder Google Assistent bezeichnet. Das im Verlauf der Arbeit zu entwickelnde \ac{NUI} soll auf einen dieser Assistenten aufbauen.
+\subsection{Sprachassistenten}
+
+Im allgemeinen Sprachgebrauch werden als \ac{AI} die heute üblichen Sprachassistenten wie Siri, Alexa, Cortana oder Google Assistent bezeichnet. Das im Verlauf der Arbeit zu entwickelnde \ac{NUI} soll auf einen dieser Assistenten aufbauen.
 
 Die Entwicklung einer eigenen Spracherkennung ist im Rahmen dieser Arbeit nicht möglich, da dies sehr viel Zeit und Arbeit in Anspruch nimmt. Selbst Firmen wie Google oder Amazon benötigten mehrere Jahre um ihre Assistent auf das aktuelle Leistungsniveau zu heben.
-
-Es soll nun untersucht werden, in wie weit die heute gängigen Assistenten genutzt werden können, um eine Sprachsteuerung für ein \ac{NUI} (siehe Kapitel ?????) umzusetzen.
-
-Hierbei muss der Assistent folgende Kriterien erfüllen:
-\begin{itemize}
- \item Lauffägig auf der Microsoft HoloLens
- \item Offene Programmierschnittstelle (\ac{SDK})
- \item Möglichkeit eigener Sprachkomandos
-\end{itemize}
 
 \subsection{Funktionsweise der Sprachassistenten}
 Auch wenn die genauen Implementierungen der Sprachassistenten verschiedenen ist, so haben sie alle eins gemenisam und zwar ist dies der Weg der Sprachverarbeitung.
 
-Die Funktionsweise von Siri udn Co. ist recht einfach gehalten. Der Nutzer löst mit einem Stichwort "`Hey, Siri..."', "`Ok, Google..."' und so weiter die Benutzung aus. Der darauf folgende Sprachbefehl wird aufgezeichnet und komprimiert an einen Server weitergeleitet, welcher den gesprochenen Text auswertet und in schriftliche Befehle umwandelt. Diese Befehle werden dann umgehend zurück an das Endgerät des Nutzers Versand, welches nun auf die Befehle reagieren kann.
+Die Funktionsweise von Siri udn Co. ist recht einfach gehalten. Der Nutzer löst mit einem Stichwort, "`Hey, Siri..."', "`Ok, Google..."' (Abbildung \ref{assistent_img} 1.)und so weiter, die Benutzung aus. Der darauf folgende Sprachbefehl wird aufgezeichnet und komprimiert an einen Server weitergeleitet (Abbildung \ref{assistent_img} 2.), welcher den gesprochenen Text auswertet und in schriftliche Befehle umwandelt (Abbildung \ref{assistent_img} 3.). Diese Befehle werden dann umgehend zurück an das Endgerät des Nutzers Versand (Abbildung \ref{assistent_img} 4.), welches nun auf die Befehle reagieren kann (Abbildung \ref{assistent_img} 5.). In Abbildung \ref{assistent_img} ist dieses vorgehen noch einmal schematisch Dargestellt.
+
+?????\textcolor{red}{ Wie sieht es besser aus? Verweis auf Abb. oder einzelnen Punkte angeben? oder punkte ganz weglassen? }?????
 
 \begin{figure}[!ht]
 \centering
@@ -31,6 +26,8 @@ Die Funktionsweise von Siri udn Co. ist recht einfach gehalten. Der Nutzer löst 
 \centering
 \end{figure}
 
+\FloatBarrier
+
 Hierbei ist zu beachten, dass jegliche Kommunikation zwischen Endgerät und Server bei allen Assistenten über HTTPS gesichert ist.
 
 Innerhalb der Server, welche die Sprache zu Text wandeln, kommen fast immer neuronale Netze zum einsatz, da nur sie in der Lage sind schnell und eindeutig die Spachbefehle zu wandeln.
@@ -38,14 +35,24 @@ Durch die gehäufte Verwendung mit immer neuen Stimmen und Befehlen lernen die Sy
 
 In den nun folgenden Abschnitten werden die genannten Assistenten auf ihre Möglichkeiten untersucht.
 
-\subsection{Siri}
+\subsection{Untersuchung der Sprachassistenten}
+Es soll nun untersucht werden, in wie weit die heute gängigen Assistenten genutzt werden können, um eine Sprachsteuerung für ein \ac{NUI} (siehe Kapitel ?????) umzusetzen.
+
+Hierbei muss der Assistent folgende Kriterien erfüllen:
+\begin{itemize}
+ \item Lauffägig auf der Microsoft HoloLens
+ \item Offene Programmierschnittstelle (\ac{SDK})
+ \item Möglichkeit eigener Sprachkomandos
+\end{itemize}
+
+\subsubsection{Siri}
 Der wohl älteste und bekannteste Sprachassistent ist "`Siri"'. Siri ist eine Software zur Spracherkennung und wurde von Apple im Jahre 2010 zusammen mit der Firma Siri Inc. von Apple aufgekauft. Schon ein Jahr später wurde der Assistent im Zuge der Veröffentlichung des iPhone 4s vorgestellt und veröffentlicht.
 
 Siri ist eine proprietäre Software und nur iOS, machOS, watchOS und tvOS einsetzbar, weshalb eine Verwendung auf der HoloLens nicht möglich ist. Zwar verfügt Siri über ein offenes \ac{SDK}, dieses ist jedoch nur für Apple eigene Betriebssysteme ausgelegt.
 
 
-\subsection{Alexa}
-\subsection{Cortana}
-\subsection{Google Assistent}
+\subsubsection{Alexa}
+\subsubsection{Cortana}
+\subsubsection{Google Assistent}
 
-\subsection{Auswertung der Möglichkeiten}
+\subsubsection{Auswertung der Möglichkeiten}
