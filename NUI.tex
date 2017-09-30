@@ -1,0 +1,68 @@
+\section{Natural User Interfaces}
+Als Natural User Interfaces \ac{NUI} werden Benutzeroberflächen von Computern und Programmen bezeichnet, welche sich durch Gesten, Sprache, Berühren, Tippen und Wischen bedienen lassen. In der heutigen Zeit begegnen wir ständig solchen \ac{NUI}s. Zum Beispiel beim mehrmals täglichen Griff zum Smartphone oder der Smartwatch. Über einen berührungsempfindlichen Display, werden Apps heute schon über Gesten gesteuert. \cite{InteraktiveSysteme}
+
+Diese Steuerung funktioniert zum Teil bei der jüngeren Generation, so genannten "`digital natives"', also Menschen die im digitalen Zeitalter geboren sind, schon automatisch und unterbewusst. Jeder, der schon einmal eine App bedient hat kennt die Geste zum löschen aus einer Liste! Die Bewegung des Eintrags nach links oder rechts löscht das entsprechende Element, getreu nach dem Motto "`Aus den Augen aus dem Sinn"'. \cite{WikiDigitalNativ}
+
+Diese Art von Gesten ist so intuitiv für Menschen, das auch "`digital immigrants"', also Menschen, die erst im Erwachsenenalter den Umgang mit digitalen Geräten gelernt haben diese nach einmaliger Erklärung gelernt haben.
+
+Aber das natürliche Verhalten von uns Menschen geht noch viel weiter. Diese einmal auf einem Smartphone gelernte Geste in einer App, wird unterbewusst auch auf andere Applikationen übertragen. Eine App, welche diese einfache und mittlerweile etablierte Geste nicht unterstützt wird umgehend Kritik ernten, da sie mit altbekanntem bricht und so ein "`Natürliches"' arbeiten nicht mehr gegeben ist.
+
+\subsection{Natürliche Bedienung durch Gesten}
+Was jedoch genau macht eine Geste "`Natürlich"'? Die Beantwortung dieser Frage ist im gleichen Maße Trivial, wie Komplex. 
+
+Dies bedeutet, sobald einmal eine "`Natürliche Geste"' gefunden wurde, erscheint wie gegeben und wird nicht in Frage gestellt, weil sie ja "`Logisch"' ist. Das Komplexe ist jedoch solche "`logischen Gesten"` erst einmal zu finden. 
+
+Hierfür müssen viele Aspekte aus den Verhaltenswissenschaften beachtet werden:
+\begin{itemize}
+\item Arbeitswissenschaft
+\item Psychologie
+\item Soziologie
+\item Pädagogik
+\end{itemize}
+
+Ergänzend zu diesen Aspekten gibt es die EN ISO 9241, welche Richtlinien der Mensch-Computer-Interaktion beschreibt. Ins besondere der Teil 110 "'Grundsätze der Dialoggestaltung"` kann Helfen passende Bedienmöglichkeiten für ein \ac{NUI} zu finden. \cite{ISO9241} Die Grundsätze sind:
+
+\begin{itemize}
+\item Aufgabenangemessenheit - geeignete Funktionalität, Minimierung unnötiger Interaktionen 
+\item Selbstbeschreibungsfähigkeit - Verständlichkeit durch Hilfen / Rückmeldungen 
+\item Steuerbarkeit - Steuerung des Dialogs durch den Benutzer 
+\item Erwartungskonformität - Konsistenz, Anpassung an das Benutzermodell 
+\item Fehlertoleranz - unerkannte Fehler verhindern nicht das Benutzerziel, erkannte Fehler sind leicht zu korrigieren 
+\item Individualisierbarkeit - Anpassbarkeit an Benutzer und Arbeitskontext 
+\item Lernförderlichkeit - Minimierung der Erlernzeit, Metaphern, Anleitung des Benutzers 
+\end{itemize}
+
+\subsection{Erstellung eines Use Cases}
+Anhand dieser Grundsätze kann nicht nur ein System, welches mit Tastatur und Maus bedient wird definiert werden, sondern auch ein \ac{NUI}. Dies wird nun Beispielhaft an der Geste für "'löschen"` gezeigt um sicher zu Stellen, dass im späteren Verlauf der Arbeit ein \ac{NUI} anhand genau dieser Grundsätze definiert werden kann.
+
+\paragraph{Aufgabenangemessenheit} 
+Das Wischen zum Löschen eines Eintrags ist schnell und einfach zu erlernen. Ebenso kann die Geste schnell wiederholt werden um möglichst schnell auch mehrere Elemente löschen zu können.
+
+\paragraph{Selbstbeschreibungsfähigkeit}
+Die Geste ist zwar einfach und mittlerweile auch bekannt, aber es muss auch sichergestellt sein, dass neue Nutzer die Geste lernen können. Dies kann zum Beispiel durch ein kurzes wackeln beim ersten öffnen angezeigt werden. Dem Nutzer wird durch diese Bewegung suggeriert, dass diese Elemente bewegbar sind. 
+
+\paragraph{Steuerbarkeit}
+Wischt der Nutzer nun bewusst oder durch Neugier ausgelöst vom Wackeln das Element aus dem Bildschirm muss immer die Möglichkeit bestehen das Element wiederherstellen zu können. Dies ist nur konsequent, da eine so einfache Geste auch einmal versehentlich gemacht werden kann.
+
+\paragraph{Erwartungskonformität}
+Ist diese Geste einmal etabliert, muss sie konsequent in allen Listen implementiert sein, da es sonst zum Bruch der Erwartung kommt und der Nutzer unnötiger verwirrt wird.
+
+\paragraph{Fehlertoleranz} 
+Zu Fehlertoleranz gehört das wiederherstellen eines Eintrags wie schon unter Steuerbarkeit beschrieben. Zusätzlich kommt jedoch hinzu, das die Geste eventuell vom Gerät falsch interpretiert wurden ist und der Nutzer gar nichts löschen wollte. Auch in solchen fällen muss eine Wiederherstellung möglich sein.
+
+\paragraph{Individualisierbarkeit}
+Das wischen ist eine tolle Geste! Aber in welche Richtung? Nach links oder rechts wischen zum löschen? Genau hier muss die App schlau reagieren, denn die richtige Antwort ist: Beides muss möglich sein. Bekanntlicher weise gibt es Links- und Rechtshänder, wobei das Gerät zumeist mit der dominanten Hand gehalten wird. Für einen Rechtshänder welcher den Daumen zum wischen links hat, ist das Wischen nach rechts leichter als nach links. Genau umgekehrt ist es bei Linkshändern. Diese wischen eher nach Links. 
+
+Dieses Verhalten kann auch selbst nachgestellt werden, egal ob der Nutzer Links- oder Rechtshänder ist. Die Geste wird unterbewusst durch beide Hände in unterschiedliche Richtungen ausgeführt. 
+
+\paragraph{Lernförderlichkeit}
+Bei der  Lernförderlichkeit trifft ganz klar das Sprichwort "'Aus den Augen aus dem Sinn"` zu. Der Nutzer möchte etwas "'weg"` haben. Warum es also nicht außerhalb des Displays platzieren. Es wird nicht mehr gesehen und ist somit "'weg"`. Diese einfache Analogie ist für jeden Nutzer zu verstehen und umzusetzen.
+
+\subsection{Auswertung des Use Cases}
+Anhand des vorgestellten Use Cases wurde gezeigt, dass es möglich ist ein \ac{NUI} zu designen. Hierbei müssen natürlich die Gegebenheiten des jeweiligen Gerätes beachtet werden, wie zum Beispiel das ein Smartphone in beiden Händen gehalten werden kann. Dadurch kann sich gegebenen Falls der Use Case erweitern oder verändern. 
+
+1991 beschrieb Mark Weiser schon, wie sich Computer immer mehr in unseren Alltag integrieren und langsam immer unkenntlicher werden. Die Grenze zwischen realer Umwelt und virtueller Welt verschwimmt heute immer mehr. \cite{Computer21}
+
+Dies hat natürlich auch zur Folge, das sich die Schnittstelle zwischen Mensch und Computer ständig ändert und weiterentwickelt. Musste man 1997 zu beginn von Google noch Stichworte mit Maus und Tastatur eingeben um das Internet zu durchsuchen, reicht heute schon ein Sprachbefehl. 
+
+Der Computer wertet mit verschiedenen Algorithmen das gesprochene aus, und versucht dem Nutzer eine direkte Antwort zu geben, während man 1997 von Google eine Liste mit Webseiten bekam, auf welchen die Schlagworte zu finden waren. 
