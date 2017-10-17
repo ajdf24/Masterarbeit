@@ -60,7 +60,7 @@ Das Bauen im Bestand mit \ac{AR} ist natürlich sehr nützlich. Jedoch ist das Rah
 Am besten eignet sich der Architektur Editor. Es ist heute relativ einfach möglich, ein grundlegendes Design Programm zu erstellen, welches Objekte erstellen oder verändern kann. 
 Dieses System, kann dann um ein \ac{NUI} erweitert werden.
 
-\subsection{Erstellung eines Architektur Editor als Prototyp}
+\subsection{Erstellung eines Architektur Editor als Prototyp}\label{Erstellung eines Architektur Editor als Prototyp}
 Natürlich ist es innerhalb der Arbeit nicht möglich einen realistischen Architektur Editor zu erstellen, mit dem es möglich ist hochauflösende \ac{AR}-Modelle von Gebäuden zu designen.
 Hierauf liegt auch nicht das Augenmerk der Arbeit. 
 
@@ -96,4 +96,144 @@ Sprachbefehle:
  \item Objekt drehen
 \end{itemize}
 
-Es ergeben sich also aus vier Bedienmöglichkeiten acht Mögliche Bedienszenarien für das reine Designen. Ob alle Möglichkeiten umsetzt werden, wird sich in der späteren Bedienung herausstellen. Eventuell sind Gesten zum Auswählen des Materials nicht Sinnvoll und Praktikabel ebenso wie das Setzen und Entfernen von Blöcken. 
+Es ergeben sich also aus vier Bedienmöglichkeiten acht Mögliche Bedienszenarien für das reine Designen. Ob alle Möglichkeiten umgesetzt werden, wird sich in der späteren Bedienung herausstellen. Eventuell sind Gesten zum Auswählen des Materials nicht Sinnvoll und Praktikabel ebenso wie das Setzen und Entfernen von Blöcken über Sprache. 
+
+\subsection{Beschreibung der Gesten und Sprachkommandos}
+Nachdem alle Steuerungstypen für den Prototyp festgelegt wurden, muss nun eine genaue Beschreibung erfolgen. Im ersten Schritt geht es rein um die grundlegende Erstellung von Gesten und Sprachkommandos, ohne technische Plattformen oder Limitierungen einzubeziehen. Dies geschieht anschließend im Kapitel ?????.
+
+\subsubsection{Gesten}
+Gesten, welche innerhalb eines \ac{NUI} implementiert werden, müssen selbsterklärend sein. Somit muss eine Geste gefunden werden, welche möglichst in der realen Welt genau das tut, was auch im Computer getan werden soll.
+
+\paragraph{Setzen und Entfernen}
+Im leichte Gegenstände zum platzieren werden diese Gegenstände von Menschen zwischen Daumen und Zeigefinger - größere oder schwerere Gegenstände auch schon mal unter Zuhilfenahme des Mittelfingers - gegriffen und auf der gewünschten Stelle platziert. Siehe Abbildung \ref{chess_hand}.
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=10cm]{Bilder/chess_hand.png}
+\caption{Platzieren eines Gegenstandes mit der Hand \cite{ChessPlacing}}
+\label{chess_hand}
+\centering
+\end{figure}
+
+Ohne die Entsprechende Schachfigur ergeben sich dann Gesten wie diese. In Abbildung \ref{placing_1} ist die entsprechende Geste mit geschlossener Hand zu sehen, wobei in Abbildung \ref{placing_2} die Hand geöffnet ist. Die Bedeutung der Gesten ist jedoch die selbe.
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=5cm]{Bilder/placing_1.jpg}
+\caption{Platzierende Geste Variante 1 \cite{Placing1}}
+\label{placing_1}
+\centering
+\end{figure}
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=5cm]{Bilder/placing_2.jpg}
+\caption{Platzierende Geste Variante 2 \cite{Placing2}}
+\label{placing_2}
+\centering
+\end{figure}
+
+\FloatBarrier
+
+Werden die Finger nun geöffnet, wird der Gegenstand abgesetzt und die Position nicht weiter verändert. Der Block ist gesetzt.
+
+Umgekehrt funktioniert die Geste genau so. Werden die Finger innerhalb eines Blocks geschlossen, wird dieser selektiert und kann danach verschoben oder entfernt werden.
+Menschen entfernen Gegenstände, indem sie diese Greifen und dann woanders ablegen. Der Prototyp kann einen Stein der losgelassen wird und dann in der Luft ist als gelöscht interpretieren. 
+
+\paragraph{Objekte drehen}
+
+Um Objekte auf einer Fläche zu drehen, nutzen Menschen in der Regel den Zeigefinger, um das Objekt auf einer Seite anzustoßen. Dieser Impuls dreht dann das entsprechende Objekt. Für das \ac{NUI} bedeutet das also, das ein ausgestreckter Zeigefinger der in der Luft rotiert das Objekt rotieren soll. In Abbildung \ref{rotate_1} ist diese Geste einmal schematisch dargestellt.
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=5cm]{Bilder/rotate1.png}
+\caption{Rotieren Variante 1 \cite{Rotate1}}
+\label{rotate_1}
+\centering
+\end{figure}
+
+Das Objekt kann aber auch noch auf eine andere Art gedreht werden. Menschen können ein Gegenstand auch zwischen Daumen und Zeigefinger einklemmen und es dann durch eine Drehung der Hand drehen. 
+
+Im Umkehrschluss bedeutet dies, das auch diese Geste bekannt sein muss. Das \ac{NUI} muss entsprechend zwei drehende Finger auch als Kommando zum Drehen auffassen. In Abbildung \ref{rotate_2} ist diese Geste dargestellt. 
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=5cm]{Bilder/rotate2.jpg}
+\caption{Rotieren Variante 2 \cite{Rotate2}}
+\label{rotate_2}
+\centering
+\end{figure}
+
+\subsubsection{Sprachkommandos}
+Sprachkommandos, sind Sätze, welche von einem \ac{NUI} als Eingabe verarbeitet werden und Aktionen auslösen. Grammatikalisch muss ein Satz mindestens aus zwei Bestandteilen bestehen, dem Subjekt, also das was verändert wird, und dem Prädikat, das angibt was getan werden soll. Somit müssen auch alle Sprachkommandos mindestens aus zwei Worten bestehen. Der Nutzer muss also angeben, was verändert werden soll und wie es verändert werden soll. 
+
+Somit ergeben sich für den Konkreten Einsatzzweck folgende grundlegende Befehle. 
+\begin{itemize}
+ \item Block setzen
+ \item Block entfernen
+ \item Objekt drehen 
+ \item Material ändern
+\end{itemize}
+
+Die ersten drei Befehle sind eindeutig. Es ist klar, das der selektierte Objekt gesetzt, entfernt oder gedreht werden soll. Ist nichts Selektiert, kann der Befehl nicht ausgeführt werden. Andernfalls hat die Eingabe des Sprachkommandos eine unmittelbare Folge.
+
+Das ändern des Materials hingegen ist komplexer. Der Befehl hat eine Variable, nämlich die Art des Materials. Das Material muss im Programm bekannt sein, um es auswählen zu können. Somit ist der Satz "`Ändere das Material zu Stein."' ein eindeutiger Befehl. Das Interface muss jedoch so Programmiert werden, dass der Auslöser "`Ändere das Material"' ist. "`Stein"' muss zusätzlich erkannt werden, diese Variable enthält die eigentliche Information. 
+
+Ist der Auslöser richtig erkannt wurden, so muss das Interface das Entsprechende Material wählen. Ist das Material dem Programm nicht bekannt, so muss es dies an den Nutzer kommunizieren. 
+
+Sprache ist jedoch nicht so eindeutig wie Gesten. Wörter können zum Beispiel mit Dialekt ausgesprochen werden. Wodurch die Erkennung um einiges schwieriger wird. Diese Zuordnung übernehmen jedoch Frameworks. Programmierer müssen sich heute nicht mehr darum kümmern das ein Wort unterschiedlich ausgesprochen werden kann. 
+
+Alle heutigen Sprachassistenten Nutzen für diese Erkennung lernende Algorithmen, welche durch die Nutzung ständig verbessert werden. 
+
+Worum sich Programmierer aber immer noch kümmern müssen, sind Synonyme Wörter, welche verwendet werden können. Von einem \ac{NUI} wird erwartet, das es Synonyme erkennt und dennoch den richtigen Befehl ausführt. 
+
+Das Wort "`setzen"' hat laut Duden folgende Synonyme:
+\begin{itemize}
+ \item platzieren
+ \item postieren
+ \item hintun
+ \item absitzen
+ \item abhocken
+ \item eingraben
+ \item einpflanzen
+ \item einsetzen
+ \item stecken
+ \item sedimentieren
+ \item wetten
+ \item tippen
+\end{itemize}
+
+Die Wörter "`wetten"' und "`tippen"' beziehen sich eindeutig auf das "`setzen"' einer Wette und sind somit keine echten alternativen für ein \ac{NUI}. Ebenso verhält es sich mit eingraben, einpflanzen, einsetzen, stecken und sedimentieren. Diese Wörter beziehen sich eindeutig auf das "`setzen"' einer Pflanze. "`Absitzen"' und "`abhocken"' stammen aus der schweizerischen Mundart sind aber auch in Deutschland gebräuchlich. Sie beziehen sich auf das hinsetzen einer Person und sich somit auch nicht als Alternativen für ein \ac{NUI} vergesehen. 
+"`Platzieren"', "`postieren"' und "`hintun"' hingegen sind eindeutige alternativen für das angedachte \ac{NUI}. Es ist durchaus aus im Bereich des möglichen, das ein Nutzer "`Block platzieren"' oder "`Block postieren"' sagt an Stelle von "`Block setzen"'. Das Interface muss also bei den Befehlen:
+
+\begin{itemize}
+ \item Block setzen
+ \item Block postieren
+ \item Block platzieren
+ \item Bock hintun
+\end{itemize}
+
+immer einen Block setzen. 
+
+Wenn man das Schema weiter verfolgt, so ergeben sich auf für den Befehl "`Block entfernen"' Synonyme Befehle:
+
+\begin{itemize}
+ \item Block entfernen
+ \item Block löschen
+ \item Block tilgen
+ \item Bock wegtun
+\end{itemize}
+
+Für "`Objekt drehen"' kommen noch einmal folgende Befehle hinzu:
+
+\begin{itemize}
+ \item Objekt drehen
+ \item Objekt rotieren
+\end{itemize}
+
+Aus den ehemals vier grundlegenden Befehlen (siehe Abschnitt \ref{Erstellung eines Architektur Editor als Prototyp}) sind schon 10 geworden, nur damit sich das Interface "`Natürlich"' bedienen lässt.
+
+Sprache erlaubt es aber auch Wörter zu trennen, so kann zum Beispiel der Befehl "`Block hintun"' auch "`Tue den Block hin"' lauten, ohne das sich an der Bedeutung des Befehls etwas ändert. 
+Um dies umzusetzen gibt es technisch gesehen verschiedene Möglichkeiten. 
+
+Eine ist die so genannte \ac{SRGS} des \ac{W3C}, welche Sprachen grammatikalisch beschreiben. Hier können in \ac{XML} konformer weise, Wortschemen eingegeben werden, um einer Maschine zu verstehen zu geben, wie ein Mensch, ein Befehl aussprechen würde.
