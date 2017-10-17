@@ -76,5 +76,46 @@ Nutzer von "`Windows 10"', einer Xbox oder eines Windows Phone kennen sie bereit
 Skills für Cortana werden ähnlich wie die von Alexa in der Clound ausgeführt und können in .NET oder Node.js geschrieben werden. \cite{Cortana}
 
 \subsubsection{Google Assistent}
+Der Google Assistant ist ein Assistent, welcher von Google entwickelt wird und 2016 als Nachfolger von Google Now erschienen ist. \cite{GoogleAssistant}
+
+Eine Besonderheit dieses Assistenten ist, das er Fragen auch aus dem Kontext früher gestellter Fragen beantworten kann. So kann ein Nutzer zum Beispiel Fragen "`In welchem Verein spielt Manuel Neuer?"'. Wenn als nächstes die Frage "`Wie alt ist er?"' folgt, kann der Google Assistent aus dem Kontext schießen, das ebenfalls "`Manuel Neuer"' als "`er"' gemeint ist. \cite{AssistantBild}
+
+Der Google Assistant ist durch eine Vielzahl von \ac{SDK}s wie zum Beispiel Android, Apple, C++, Python und weitere unter quasi allen Plattformen lauffähig. \cite{ApiAI}
+
+Mit sogenannten "`Agents"' ist es möglich, ähnlich wie mit Alexa Skills, über ein Web-Interface neue Funktionen zu erstellen.
 
 \subsubsection{Auswertung der Möglichkeiten}
+Nach dem Überblick über die vier Assistenten Siri, Alexa, Cortana und Google Assistent wird nun ausgewertet welcher am besten für die Erstellung eines \ac{NUI} geeignet ist.
+
+Im Kapitel \ref{Augmented Reality} wurde die Microsoft Hololens für die Erstellung eines \ac{NUI} favorisiert. Auf ihr muss also der Assistent lauffähig sein. Da Apple für Siri nur ein \ac{SDK} unter iOS bereitgestellt ist es nicht möglich diesen Assistent auf der Hololens zu verwenden. Alexa, Cortana und der Google Assistant können auf der Hololens aufsetzen. Dies funktioniert durch die bereitgestellten \ac{SDK}s zumindest theoretisch und muss in der Praxisumsetzung der Arbeit noch einmal geprüft werden.
+
+Alle Assistenten verfügen über ein offenes \ac{SDK}, welches kostenlos verwendet werden kann. Lediglich bei der Ausführung von Befehlen innerhalb der Cloud (Skills)  fallen kosten an. Hierbei rechnen alle Hersteller nach Anzahl der Ausführungen ab und nicht nach Laufzeit oder Rechenleistung.
+
+Siri, Alexa und der Google Assistant haben jeweils die Möglichkeit eigene Funktionen zu erstellen und diese innerhalb von Programmen zur Ausführung zu bringen. Durch das Web-Interface des Google Assistant können zwar eine Vielzahl von Funktionen erstellt werden, jedoch sind die Möglichkeiten bei Alexa zumindest aktuell um ein vielfaches größer, da hier Java oder Node.js Quellcode zur Ausführung kommt. 
+Siri kann Befehle verarbeiten und Funktionen innerhalb einer installierten App aufrufen. Jedoch ist die Funktionalität hierauf beschränkt. Lediglich Apple kann eigene neue Funktionen für Siri bereitgestellen.
+
+Microsoft arbeitet zur Zeit an einem Skill \ac{SDK} für Cortana, welches ähnlich wie der Amazon Ansatz aussieht. Für Cortana kommt in der Cloud .NET oder Node.js Code zur Ausführung. Aktuell befindet sich dieses \ac{SDK} in einer öffentlichen Beta-Phase und die Schnittstellen sind noch nicht Final.
+
+In der Tabelle \ref{Assistentenvergleich} ist dies noch einmal zusammengefasst.
+
+
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+ Anforderung 					& Priorisierung & Siri				& Alexa				& Cortana 	 		& Google Assistant		\\ \hline		
+ 
+ Lauffägig auf der Microsoft HoloLens 		& sehr hoch 	& \textcolor{red}{X} 		& \textcolor{green}{\checkmark} & \textcolor{green}{\checkmark}	& \textcolor{green}{\checkmark} \\ \hline
+ 
+ Offene Programmierschnittstelle (\ac{SDK})	& hoch 		& \textcolor{green}{\checkmark}	& \textcolor{green}{\checkmark} & \textcolor{green}{\checkmark} & \textcolor{green}{\checkmark} \\ \hline
+ 
+ Möglichkeit eigener Sprachkomandos		& sehr hoch 	& \textcolor{green}{\checkmark}	& \textcolor{green}{\checkmark} & \textcolor{red}{X} 		& \textcolor{green}{\checkmark} \\ \hline
+  
+ 
+\end{tabular}
+\end{center}
+\caption{Tabellarischer Vergleich der Assistenten}
+\label{Assistentenvergleich}
+\end{table}
+
+Aufgrund der vorangegangenen Analyse zeigte sich, das Alexa momentan die besten Möglichkeiten bietet um in ein \ac{NUI} integriert zu werden. Hierfür spricht vor allem das \ac{AVS}-\ac{SDK} welches schnell kompiliert und einsatzbereit ist. Die zweite Wahl, wäre der Google Assistant mit seiner Vielzahl von \ac{SDK}s. Sollten beide Möglichkeiten technisch nicht umsetzbar sein, so muss auf Cortana zurückgegriffen werden. Hier ist eine Lauffähigkeit durch Microsoft garantiert. Jedoch ist das Skill \ac{SDK} noch nicht final veröffentlicht.

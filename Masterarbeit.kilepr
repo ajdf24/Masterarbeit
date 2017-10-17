@@ -21,6 +21,20 @@ src_extensions=.tex .ltx .latex .dtx .ins
 MakeIndex=
 QuickBuild=
 
+[document-settings,item:AI.tex]
+Bookmarks=
+Encoding=ISO-8859-15
+Highlighting=LaTeX
+Indentation Mode=normal
+Mode=LaTeX
+
+[document-settings,item:AR.tex]
+Bookmarks=
+Encoding=ISO-8859-15
+Highlighting=LaTeX
+Indentation Mode=normal
+Mode=LaTeX
+
 [document-settings,item:Abkuerzungen.tex]
 Bookmarks=
 Encoding=ISO-8859-1
@@ -46,6 +60,13 @@ Highlighting=LaTeX
 Indentation Mode=normal
 Mode=LaTeX
 
+[document-settings,item:NUI.tex]
+Bookmarks=
+Encoding=ISO-8859-15
+Highlighting=LaTeX
+Indentation Mode=normal
+Mode=LaTeX
+
 [document-settings,item:Quellen.bib]
 Bookmarks=
 Encoding=ISO-8859-1
@@ -55,12 +76,32 @@ Highlighting=BibTeX
 Indentation Mode=normal
 Mode=BibTeX
 
+[item:AI.tex]
+archive=true
+column=540
+encoding=ISO-8859-15
+highlight=LaTeX
+line=120
+mode=LaTeX
+open=true
+order=3
+
+[item:AR.tex]
+archive=true
+column=51
+encoding=ISO-8859-15
+highlight=LaTeX
+line=0
+mode=LaTeX
+open=true
+order=4
+
 [item:Abkuerzungen.tex]
 archive=true
-column=41
+column=11
 encoding=ISO-8859-1
 highlight=LaTeX
-line=4
+line=8
 mode=LaTeX
 open=true
 order=0
@@ -77,13 +118,23 @@ order=1
 
 [item:Masterarbeit.tex]
 archive=true
-column=17
+column=16
 encoding=ISO-8859-15
 highlight=LaTeX
-line=198
+line=210
 mode=LaTeX
 open=true
 order=2
+
+[item:NUI.tex]
+archive=true
+column=0
+encoding=ISO-8859-15
+highlight=LaTeX
+line=0
+mode=LaTeX
+open=true
+order=5
 
 [item:Quellen.bib]
 archive=true
@@ -105,11 +156,23 @@ mode=
 open=false
 order=-1
 
-[view-settings,view=0,item:Abkuerzungen.tex]
-CursorColumn=41
-CursorLine=4
+[view-settings,view=0,item:AI.tex]
+CursorColumn=540
+CursorLine=120
 JumpList=
-ViMarks=.,4,40,[,4,19,],4,40
+ViMarks=.,120,0,[,119,0,],120,539
+
+[view-settings,view=0,item:AR.tex]
+CursorColumn=51
+CursorLine=0
+JumpList=
+ViMarks=.,0,34,[,0,34,],0,50
+
+[view-settings,view=0,item:Abkuerzungen.tex]
+CursorColumn=11
+CursorLine=8
+JumpList=
+ViMarks=.,8,10,[,8,9,],8,10
 
 [view-settings,view=0,item:Einleitung.tex]
 CursorColumn=194
@@ -118,10 +181,16 @@ JumpList=
 ViMarks=.,11,71,[,11,71,],11,71
 
 [view-settings,view=0,item:Masterarbeit.tex]
-CursorColumn=17
-CursorLine=198
+CursorColumn=16
+CursorLine=210
 JumpList=
-ViMarks=.,198,16,[,198,9,],198,16
+ViMarks=.,210,9,[,210,9,],210,15
+
+[view-settings,view=0,item:NUI.tex]
+CursorColumn=0
+CursorLine=0
+JumpList=
+ViMarks=
 
 [view-settings,view=0,item:Quellen.bib]
 CursorColumn=0
