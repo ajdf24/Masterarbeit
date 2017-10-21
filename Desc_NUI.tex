@@ -1,4 +1,4 @@
-\section{Beschreibung eines Natural User Interface}
+\section{Beschreibung eines Natural User Interface}\label{Beschreibung eines Natural User Interface}
 Im foldenden Kapitel werden verschiedene mögliche Einsatzgebiete für ein \ac{NUI} mit aktuellen \ac{AR} und \ac{AI}-Technologien beschireben. 
 Anhand eines Einsatzgebietes wird dann ein \ac{NUI} genauer beschrieben und designed.
 
@@ -98,7 +98,7 @@ Sprachbefehle:
 
 Es ergeben sich also aus vier Bedienmöglichkeiten acht Mögliche Bedienszenarien für das reine Designen. Ob alle Möglichkeiten umgesetzt werden, wird sich in der späteren Bedienung herausstellen. Eventuell sind Gesten zum Auswählen des Materials nicht Sinnvoll und Praktikabel ebenso wie das Setzen und Entfernen von Blöcken über Sprache. 
 
-\subsection{Beschreibung der Gesten und Sprachkommandos}
+\subsection{Beschreibung der Gesten und Sprachkommandos}\label{Beschreibung der Gesten und Sprachkommandos}
 Nachdem alle Steuerungstypen für den Prototyp festgelegt wurden, muss nun eine genaue Beschreibung erfolgen. Im ersten Schritt geht es rein um die grundlegende Erstellung von Gesten und Sprachkommandos, ohne technische Plattformen oder Limitierungen einzubeziehen. Dies geschieht anschließend im Kapitel ?????.
 
 \subsubsection{Gesten}
@@ -164,7 +164,7 @@ Im Umkehrschluss bedeutet dies, das auch diese Geste bekannt sein muss. Das \ac{
 \centering
 \end{figure}
 
-\subsubsection{Sprachkommandos}
+\subsubsection{Sprachkommandos}\label{Beschreibung Sprachkommandos}
 Sprachkommandos, sind Sätze, welche von einem \ac{NUI} als Eingabe verarbeitet werden und Aktionen auslösen. Grammatikalisch muss ein Satz mindestens aus zwei Bestandteilen bestehen, dem Subjekt, also das was verändert wird, und dem Prädikat, das angibt was getan werden soll. Somit müssen auch alle Sprachkommandos mindestens aus zwei Worten bestehen. Der Nutzer muss also angeben, was verändert werden soll und wie es verändert werden soll. 
 
 Somit ergeben sich für den Konkreten Einsatzzweck folgende grundlegende Befehle. 
@@ -236,4 +236,119 @@ Aus den ehemals vier grundlegenden Befehlen (siehe Abschnitt \ref{Erstellung ein
 Sprache erlaubt es aber auch Wörter zu trennen, so kann zum Beispiel der Befehl "`Block hintun"' auch "`Tue den Block hin"' lauten, ohne das sich an der Bedeutung des Befehls etwas ändert. 
 Um dies umzusetzen gibt es technisch gesehen verschiedene Möglichkeiten. 
 
-Eine ist die so genannte \ac{SRGS} des \ac{W3C}, welche Sprachen grammatikalisch beschreiben. Hier können in \ac{XML} konformer weise, Wortschemen eingegeben werden, um einer Maschine zu verstehen zu geben, wie ein Mensch, ein Befehl aussprechen würde.
+Eine ist die so genannte \ac{SRGS} des \ac{W3C}, welche Sprachen grammatikalisch beschreiben. Hier können in \ac{XML} konformer weise, Wortschemen eingegeben werden, um einer Maschine zu verstehen zu geben, wie ein Mensch, ein Befehl aussprechen würde. 
+
+Hierbei werden Regeln aufgeführt, welche dann verschieden verkettet werden können um Sätze zu bilden. Über ein solches \ac{XML} können unter anderem auch verschiedene Sprachen und Dialekte abgebildet werden.
+
+\subsection{Überprüfung der Gesten und Sprachkommandos}
+Im folgenden werden die beschriebenen Gesten und Sprachkommandos anhand der ISO 9241 Teil 110 überprüft.
+
+
+\subsubsection{Gesten}
+\begin{minipage}{4cm}
+ \textbf{Grundsätze}
+\end{minipage}\hspace{0.5cm}
+\begin{minipage}{5.5cm}
+ \textbf{Setzen / Entfernen}
+\end{minipage}\hspace{0.5cm}
+\begin{minipage}{5.5cm}
+ \textbf{Drehen}
+\end{minipage}
+\\\\
+\begin{minipage}{4cm}
+\vspace{0.5cm}
+ Aufgaben-angemessenheit
+\end{minipage}\hspace{0.5cm}
+\begin{minipage}{5.5cm}
+\vspace{0.5cm}
+ Das bewegen der Hand, sowie das interagieren auf der entsprechenden Stelle, wo sich der Block befindet, sind einfach auszuführen und der Aufgabe angemessen, da der Block um den des geht virtuel berührt werden soll.
+\end{minipage}\hspace{0.5cm}
+\begin{minipage}{5.5cm}
+\vspace{0.5cm}
+ Die Bewegung der Finger ist eine einfache Geste, welche Objekte drehen sollen. Sie ist einfach gehalten und den Bewegungen von Smartphones nachempfunden.
+\end{minipage}
+\\\\
+\begin{minipage}{4cm}
+\vspace{0.5cm}
+ Selbstbeschreibungs-fähigkeit
+\end{minipage}\hspace{0.5cm}
+\begin{minipage}{5.5cm}
+\vspace{0.5cm}
+ Die Geste ist selbst beschreibend, wenn der Bock auf der Position der Finger projeziert wird. Durch das Drücken wird entsprechend der Block gesetzt oder entfernt.
+\end{minipage}\hspace{0.5cm}
+\begin{minipage}{5.5cm}
+\vspace{0.5cm}
+ Das Drehen der Finger ist nicht ganz Selbstbechreibend, jedoch gleicht das adaptive \ac{NUI}, welche die Geste interpretierert wieder aus, so das eintsprechend eine Drehbewegung erkannt werden kann.
+\end{minipage}
+\\\\
+\begin{minipage}{4cm}
+\vspace{0.5cm}
+ Steuerbarkeit
+\end{minipage}\hspace{0.5cm}
+\begin{minipage}{5.5cm}
+\vspace{0.5cm}
+ Wird ein Block versehentlich gesetzt, so kann dies auch wieder rückgängig gemacht werden, da ein Block zu jeder Zeit wieder entfernt werden kann.
+\end{minipage}\hspace{0.5cm}
+\begin{minipage}{5.5cm}
+ \vspace{0.5cm}
+ Die Drehung kann ebenso wie das Setzen und Entfernen rückgängig gemacht werden, indem eine Drehung in die entgegengesetzte Richtung gemacht wird.
+\end{minipage}
+\\\\
+\begin{minipage}{4cm}
+\vspace{0.5cm}
+ Erwartungskonformität
+\end{minipage}\hspace{0.5cm}
+\begin{minipage}{5.5cm}
+\vspace{0.5cm}
+ Die Geste Erwartungskonform zur realität gehalten und somit Erwartungskonform in jeder Hinsicht, da keine andere Handlung ausgeführt wird.
+\end{minipage}\hspace{0.5cm}
+\begin{minipage}{5.5cm}
+\vspace{0.5cm}
+ Das Drehen ist ebenso Erwartungskonform, da beim drehen keine andere Handlung ausgeführt wird.
+\end{minipage}
+\\\\
+\begin{minipage}{4cm}
+\vspace{0.5cm}
+ Fehlertoleranz
+\end{minipage}\hspace{0.5cm}
+\begin{minipage}{5.5cm}
+\vspace{0.5cm}
+ Durch die Wiederholung der Geste auf der selben Stelle kann ein versehentlich gelöschter oder gesetzter Block wieder gesetzt oder entfernt werden.
+\end{minipage}\hspace{0.5cm}
+\begin{minipage}{5.5cm}
+\vspace{0.5cm}
+ Das Drehen in die Gegenrichtung bewirkt, dass die Wirkung der ersten Drehung aufgehoben wird.
+\end{minipage}
+\\\\
+\begin{minipage}{4cm}
+\vspace{0.5cm}
+ Individualisierbarkeit
+\end{minipage}\hspace{0.5cm}
+\begin{minipage}{5.5cm}
+\vspace{0.5cm}
+ Durch das \ac{NUI} wird eine Ungenauigkeit der Nutzer abgefangen. Jedoch ist die Geste so eindeutig, das sie nicht weiter Individualisierbar ist.
+\end{minipage}\hspace{0.5cm}
+\begin{minipage}{5.5cm}
+\vspace{0.5cm}
+ Für das Drehen gibt es zwei verschiedene Möglichkeiten wie diese Geste umgesetzt werden kann. über das \ac{NUI} werden auch hier ungenauigkeiten von Seiten der Nutzer ausgeglichen.
+\end{minipage}
+\\\\
+\begin{minipage}{4cm}
+\vspace{0.5cm}
+ Lernförderlichkeit
+\end{minipage}\hspace{0.5cm}
+\begin{minipage}{5.5cm}
+\vspace{0.5cm}
+ Da die Geste zum Setzen und entfernen aus der realen Welt stammen, sind sie eindeutig und ohne Probleme zu verstehen.
+\end{minipage}\hspace{0.5cm}
+\begin{minipage}{5.5cm}
+\vspace{0.5cm}
+ Das Drehen mittels einen oder zwei Finger ist grundsätzlich auch aus der Natur gegriffen. Da die Gesten auch auf Smartphones verwendet werden, sind auch diese schon bekannt.
+\end{minipage}
+
+\subsubsection{Sprachkommandos}
+Sprache ist zwar nicht immer eindeutig, jedoch wird sie dies im Kontext betrachtet. Befehle, welche also zu einem \ac{NUI} gesprochen werden, werden entweder Verstanden und ausgeführt oder nicht. Weshalb eine überprüft anhand der ISO 9241 Teil 110 nicht Sinnvoll ist.
+
+Durch die Verwendung von synonymen Wörtern (siehe Abschnitt \ref{Beschreibung Sprachkommandos}) wird das Verständnis von Sprachbefehlen durch ein \ac{NUI} um einiges erweitert. Was eine bessere Verwendbarkeit nach sich zieht.
+
+
