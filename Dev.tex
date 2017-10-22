@@ -85,7 +85,7 @@ Die im Kapitel \ref{Beschreibung eines Natural User Interface} beschriebenen Ges
 
 \subparagraph{Drehen von Objekten} das drehen von einzelnen Blöcken ist nicht Sinnvoll. Das Drehen von verbundenen Blöcken jedoch kann über die Zoom-Geste nach links oder rechts erreicht werden. Hierbei muss natürlich auf die Physik geachtet werden, den Objekte können nicht durch reale Gegenstände bewegt werden.
 
-\subsubsection{Sprachkommandos für die HoloLens}
+\subsubsection{Sprachkommandos für die HoloLens}\label{Sprachkommandos für die HoloLens}
 Die HoloLens verfügt wie mittlerweile jedes Windows 10 getriebene Gerät über eine Cortana-Instanz, welche den Nutzer unterstützt. Der Funktionsumfang ist jedoch gleich mit einem standard Windows 10. Innerhalb eines Programms kann Cortana jedoch nicht verwendet werden. 
 
 Technisch ist die Verwendung von Amazon Alexa oder dem Google Assistant innerhalb der Unity-Skripte zwar möglich, jedoch nicht zwingend notwendig, da Unity über die \ac{UWP}-API verfügt, verfügt es auch über die darin enthaltene SpeechRecognition-API. \cite{VoiceUnity}
@@ -108,3 +108,10 @@ Ein Lösung des Problems wäre zum Beispiel die Physik der Blöcke abzuschalten, da
 Im Abschnitt \ref{Gestenentwicklung für die HoloLens} wurde beschrieben, dass die HoloLens nur die drei Gesten Select, Bloom und Hold beherrscht. Diese Limitierung ist nicht technischer Natur, sondern die Beschränkung wurde eingeführt um Nutzer nicht zu überfordern. 
 
 Bei der Entwicklung eines \ac{NUI} ist diese Beschränkung jedoch eher hinderlich. Zum Vergleich können Geräte wie zum Beispiel die "`Leap Motion"' viel mehr Gesten erkennen und verarbeiten. Die Leap Motion verfügt über eine Unity Integration, durch welche es Grundsätzlich möglich wäre Gesten zu erkennen und diese innerhalb der HoloLens Szene zu verarbeiten. \cite{LeapMotion}
+
+\subsubsection{Sprachkommando Limitierung}
+Die HoloLens verfügt zum einen über Cortana, einen Assistenten, welcher aktuell nicht erweitern lässt. Aus diesem Grund, kann er auch nicht in Programme integriert werden. 
+
+Wie in Abschnitt \ref{Sprachkommandos für die HoloLens} schon beschrieben ist es möglich über die in Unity integrierte \ac{UWP} Sprachkommandos zu implementieren. Hierbei gibt es aber auch eine Limitierung. Aktuell unterstützt Unity nur englischsprachige Kommandos. 
+
+Da es sich bei der HoloLens aktuell um eine Entwickler-Gerät handelt, welches nicht auf dem freien Markt gibt ist diese Limitierung aber nicht dramatisch. Dass Interface muss lediglich mit englischer Sprache bedient werden. Die Umsetzung anderer Sprache ist aber abzusehen, da auch der Assistent Cortana schon in der deutschen Sprache verfügbar ist.
