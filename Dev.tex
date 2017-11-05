@@ -96,6 +96,84 @@ Dies Funktioniert zusätzlich über eine \ac{SRGS}-Grammatik welche schon im Absch
 
 Es entfällt bei der Verwendung der HoloLens also ein Sprachassistent wie Alexa oder der Google Assistant und die damit verbundene Entwicklung von Skills. 
 
+\subsection{MixedRealityToolkit}
+Das MixedRealityToolkit wird von Microsoft entwickelt und ist eine Sammlung von Skripten und Komponenten, welche Programmierer bei der Entwicklung von Programmen für die HoloLens und Windows Mixed Reality headsets unterstützen. 
+
+Viele Grundlegende Elemente, wie zum Beispiel Inputs, UI Elemente oder andere Helper sind hier schon fertig implementiert. Was wiederum Zeit beim entwickeln spart. \cite{HoloToolKit}
+
+Der Quellcode ist ebenso wie viele Beispiele auf Github\footnote{\url{https://github.com/Microsoft/MixedRealityToolkit-Unity}} zu finden.
+
+\subsection{Spatial Mapping}
+Mit Hilfe des "`Spatial Mapping"' ist es möglich, den physischen Raum innerhalb der Unity Szene einzubauen. Hierbei gibt es zwei Möglichkeiten der Implementierung. Zum einen gibt es die Möglichkeit die fertige Skript-Implementierung des  MixedRealityToolkit zu verwenden. Zum anderen können auch die standard Unity-Komponenten "`Spatial Mapping Renderer"' und "`Spartial Mapping Collider"' (siehe Abbildung \ref{Unity_Spatial}) zu verwenden. 
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=10cm]{Bilder/mapping2.png}
+\caption{Spatial Mapping in Unity}
+\label{Unity_Spatial}
+\centering
+\end{figure}
+
+Im WordBuilder wurde das Spatial Mapping über Unity-Komponenten umgesetzt, da hier die Implementierung einfacher und übersichtlicher innerhalb der Szene umgesetzt werden kann wie in Abbildung \ref{Unity_Spatial} zu sehen ist. 
+
+Über den "`Spatial Mapping Renderer"' ist es möglich, den physischen Raum, welcher von der HoloLens erkannt wird innerhalb der Szene zu rendern. Hierbei kann natürlich ein beliebiges "`Material"' welches vorher definiert wurde eingesetzt werden.
+
+Der "`Spatial Mapping Collider"' bringt den erkannten Raum als Collider in die Szene. Über ihn ist somit möglich virtuelle Objekte physikalisch korrekt mit dem Raum interagieren zu lassen. Blöcke, welche in die Luft gesetzt werden, fallen somit auf den Boden des Raumes und bleiben liegen.
+
+Das Rendern des physischen Raumes innerhalb der Szene ist nicht vorgesehen. Jedoch wurde es zu Entwicklungszwecken implementiert. Über Sprachbefehle wie "`Show Room"' oder "`Hide Mesh"' kann der erkannte Raum ein oder ausgeblendet werden. Die Befehle sind konform des \ac{NUI} implementiert und können auf unterschiedliche weise ausgesprochen werden. In Abbildung \ref{WorldBuilder} ist das eingeblendete Mesh zu sehen. 
+
+% \lstinputlisting[language=C,caption=Angular View im HTML-DOM \cite{W3CAngular}, label=Angular View, captionpos=b]{Code/CubeBehaviour.cs}
+
+\subsection{Das NUI Skript}
+Die Start Methode, ist in Unity-Skripten der Konstruktor, welche einmal zum Start der Szene aufgerufen wird.
+
+Im ersten Teil des NUI-Skripts \ref{NUI_Start} (Zeilen 3-13) werden alle vom Skript benötigten Komponenten geladen. In Zeile 13 werden über einen Methodenaufruf alle "`Keywords"' generiert, auf welche das NUI reagieren soll. Daraufhin, wird der "`KeywordRecognizer"' mit den erstellten Keywords erstellt und gestartet (Zeilen 17-21).
+
+Als nächster Schritt, wird der "`GestureRecognizer"' erstellt und definiert, was bei einer erkannten Tap-Geste geschehen soll (Zeile 24-25). Wird ein Tap erkannt, wird ein Raycast von der Kameramitte ausgeführt. Trifft der Raycast ein Objekt so wird ein neuer Würfel gesetzt oder der getroffene Würfel entfernt, je nachdem ob der Nutzer gerade im Setzen- oder Entfernenmodus ist.
+
+\lstinputlisting[language=C,caption=Start Methode des NUI-Skripts, label=NUI_Start, captionpos=b]{Code/NUI_Start.cs}
+
+Im weiteren Verlauf des Skrips sind unzählige Keywords definiert und was passieren soll, wenn der KeywordRecognizer diesen Befehl erkennt. Im Listing \ref{NUI_Keyword} ist dies einmal beispielhaft dargestellt. Es wird dem "`Dictionary"' "`keywords"' ein Schlüssel-Wert-Paar hinzugefügt. Dies ist zum einen der Befehl als String und die Definition, welche ausgeführt wird wenn das Keyword erkannt wird. Im Beispiel wird die Methode "`SelectYellowCube"' ausgeführt.
+
+\lstinputlisting[language=C,caption=Keyword Erstellung, label=NUI_Keyword, captionpos=b]{Code/NUI_Keyword.cs}
+
+Wählt der Nutzer einen Würfeltyp aus, wird das entsprechende Prefab geladen und dem Cursor übergeben. Zusätzlich wird der UIController auf den Würfeltyp umgestellt und der SpeechController, welcher Sprachausgaben macht, informiert (Listing \ref{NUI_Select}).
+
+\lstinputlisting[language=C,caption=Auswählen eines Würfels, label=NUI_Select, captionpos=b]{Code/NUI_Select.cs}
+
+\subsection{Der SpeechController}
+Die Hauptaufgabe des "`SpeechController"' ist das heranführen des Nutzers an das Programm. Wird der WorldBuilder gestartet begrüßt der SpeechController den Nutzer und gibt eine kurze Einführung in die Bedienung. 
+
+Die Text zu Sprache Funktion ist Bestandteil des MixedRealityToolkit, wobei vier Stimmen zur Auswahl stehen. Im Listing \ref{Speech} ist die erste Initialisierung zu sehen. Es wird in Zeile 4 eine Stimme ausgewählt. Danach kann ein Text übergeben werden, welcher durch Sprachsynthese eine Audioausgabe generiert. 
+
+\lstinputlisting[language=C,caption=Testausgabe, label=Speech, captionpos=b]{Code/Speech.cs}
+
+"`TextToSpeech"' kann zur Zeit nur in englisch genutzt werden. Zwar kann auch ein anderssprachiger Satz eingegeben werden, hierbei ist aber die Ausgabe schlecht, da das Framework auf englischer Sprachbetonung basiert. 
+
+Damit sich die Sprachausgabe nicht überlagert muss vor der Verarbeitung des zweiten Textes geprüft werden, ob die vorherige Ausgabe beendet ist. Dies geschieht über zwei Methoden, wie im Listing \ref{Speech_While} beispielhaft zu sehen ist. 
+
+Die obere Methode ruft die untere als Co-Routine auf. Hierbei wird der Aufruf solange wiederholt bis die Bedingung in Zeile 8 erfüllt ist. Also bis kein Text mehr in der Schlange ist und die Sprachausgabe beendet wurde. Ist das dann der Fall, wird einmalig der Eingabetext in Zeile 11 Synthetisiert. 
+
+Innerhalb des SpeechController-Skripts bedinden sich viele solcher Methodenpaare, welche von anderen Skripten aufgerufen werden können.
+
+\lstinputlisting[language=C,caption=Testausgabe mit Überlagerungssperre, label=Speech_While, captionpos=b]{Code/Speech_While.cs}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \subsection{Probleme bei der Entwicklung}
 In den folgenden Abschnitten werden festgestellte Probleme bei der Entwicklung und mögliche Lösungen beschrieben.
 
