@@ -158,21 +158,28 @@ Innerhalb des SpeechController-Skripts bedinden sich viele solcher Methodenpaare
 
 \lstinputlisting[language=C,caption=Testausgabe mit Überlagerungssperre, label=Speech_While, captionpos=b]{Code/Speech_While.cs}
 
+\subsection{Der WorldCursor}
+Der WorldCursor zeigt die aktuelle Position des Cursors an. Hierfür macht der Cursor in der Update-Methode, welche einmal pro Frame durchlaufen wird, einen Raycast. 
 
+Der Raycast hat drei mögliche Funktionen, welche er abdecken muss. Trifft er kein Objekt, so ist der Raum nicht vollständig geladen und es kann kein Würfel platziert werden. In diesem Fall, wird die Nachricht "`Loading Room! Please Wait ..."', mittig im Sichtfeld des Nutzers, angezeigt.
 
+Trifft der Raycast einen Punkt, so wird ein Würfel an der entsprechenden Position angezeit. Hierbei sieht der Würfel genau aus, wie der, welcher bei einer Tap-Geste platziert wird. Ist jedoch der Remove-Modus aktiviert, in dem Würfel entfernt werden können, wird an Stelle des Würfels ein kreisförmiger Cursor angezeigt, welcher bei einer Tap-Geste den anvisierten Würfel löscht.
 
+Im Listing \ref{World_Update} wird in Zeile 8 der Raycast durchgeführt. Trifft dieser, wir abhängig vom aktuellen Zustand, entweder der Remove-Cursor oder der Würfel-Cursor angezeigt. In den Zeilen 12-19 wird der Remove-Cursor eingeblendet und entsprechend gedreht, so das dieser immer auf der Oberfläche des anvisierten Objektes ist. 
 
+Ist der Remove-Modus deaktiviert, so wird in den Zeilen 23-29 der Würfel-Cursor aktiviert und zum richtigen Punkt bewegt.
 
+Trifft der Raycast nicht, so wird in den Zeilen 34-37 der Text der Nachricht, welche angibt das der Raum geladen wird, angezeigt.
 
+\lstinputlisting[language=C,caption=Anzeigen des WorldCursor, label=World_Update, captionpos=b]{Code/World_Update.cs}
 
+\subsection{Der UIController}
+Der UIController ist eine Unterstützung der Anzeige, in welchem Modus der Nutzer sich zur Zeit befindet.
 
+Es wird im oberen linken Bildschirmbereich ein Quadrat in der aktuellen Farbe der Würfel angezeigt. Außerdem ist das Quadrat im Remove-Modus durchgestrichen. 
 
-
-
-
-
-
-
+Die Anzeige dient lediglich zur Unterstützung des Nutzers, hat aber keine funktionale Bedeutung. 
+Der Code besteht aus Standard-Unity-Prefabs und der Quellcode des Skriptes ist trivial, weshalb hier auf ein Programmierbeispiel verzichtet wird.
 
 \subsection{Probleme bei der Entwicklung}
 In den folgenden Abschnitten werden festgestellte Probleme bei der Entwicklung und mögliche Lösungen beschrieben.
@@ -193,3 +200,14 @@ Die HoloLens verfügt zum einen über Cortana, einen Assistenten, welcher aktuell 
 Wie in Abschnitt \ref{Sprachkommandos für die HoloLens} schon beschrieben ist es möglich über die in Unity integrierte \ac{UWP} Sprachkommandos zu implementieren. Hierbei gibt es aber auch eine Limitierung. Aktuell unterstützt Unity nur englischsprachige Kommandos. 
 
 Da es sich bei der HoloLens aktuell um eine Entwickler-Gerät handelt, welches nicht auf dem freien Markt gibt ist diese Limitierung aber nicht dramatisch. Dass Interface muss lediglich mit englischer Sprache bedient werden. Die Umsetzung anderer Sprache ist aber abzusehen, da auch der Assistent Cortana schon in der deutschen Sprache verfügbar ist.
+
+\subsection{Auswertung des Programm in Hinsicht auf das geplante NUI}
+Im Kapitel \ref{Natural User Interfaces} wurde ein \ac{NUI} grundlegend beschrieben. Hierbei wurde erklärt, welche Dinge zu beachtet sind und wie eine Umsetzung geplant werden kann.
+
+Der Abschnitt \ref{Erstellung eines Architektur Editor als Prototyp} wurde hierauf aufbauend ein konkretes \ac{NUI} am Beispiel eines prototypischen Architektur Editors beschrieben. Es wurde genaustens Definiert, wie Sprachbefehle und Gesten umgesetzt werden müssen um ein möglichst "`Natürliches"' Interface zu erstellen, welches einfach zu erlernen und zu bedienen ist.
+
+Im Abschnitt \ref{Gestenentwicklung für die HoloLens} wurde jedoch gezeigt, dass es nicht möglich ist zusätzliche Gesten für die HoloLens zu entwickeln. Woraufhin die Definition der Gesten angepasst werden musste.
+
+Auch wenn die Entwicklung der Gesten nicht wie im geplanten Maße umgesetzt werden konnte, so konnten jedoch die erdachten Sprachkommandos umgesetzt werden. Da die HoloLens momentan noch nicht auf den freien Markt erhältlich ist, ist die aktuelle Spracherkennung lediglich auf die englische Sprache beschränkt. Um zu zeigen, dass die Entwicklung eines \ac{NUI} möglich ist, ist diese Einschränkung jedoch nicht von Bedeutung. 
+
+Mit der reinen HoloLens ist es also nicht möglich, eine AR-Anwendung zu entwickeln die mit frei erdachten Gesten arbeitet. 
