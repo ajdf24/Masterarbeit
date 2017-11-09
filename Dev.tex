@@ -1,5 +1,5 @@
 \section{Versuch der Entwicklung eines Natural User Interface anhand der Microsoft HoloLens}
-Im Kapitel \ref{Augmented Reality} wurde Untersucht, welches Gerät sich am besten zur Entwicklung eines \ac{NUI} eignet um \ac{AR} Inhalte darzustellen und zu bearbeiten. Hierbei ergaben die Untersuchungen, dass die HoloLens das momentan beste Gerät auf dem Markt ist. 
+Im Kapitel \ref{Augmented Reality} wurde Untersucht, welches Gerät sich am besten zur Entwicklung eines \ac{NUI} eignet, um \ac{AR} Inhalte darzustellen und zu bearbeiten. Hierbei ergaben die Untersuchungen, dass die HoloLens das momentan beste Gerät auf dem Markt ist. 
 
 \begin{figure}[!ht]
 \centering
@@ -9,7 +9,7 @@ Im Kapitel \ref{Augmented Reality} wurde Untersucht, welches Gerät sich am beste
 \centering
 \end{figure}
 
-Um Sprachkommandos innerhalb dieses \ac{NUI} umzusetzen, wurden verschiedene Sprachassistenten miteinander vergliche (siehe Kapitel \ref{Artificial Intelligence}). Am besten eignet sich hierfür Amazon Alexa oder der Google Assistant. 
+Um Sprachkommandos innerhalb dieses \ac{NUI} umzusetzen, wurden verschiedene Sprachassistenten miteinander verglichen (siehe Kapitel \ref{Artificial Intelligence}). Am besten eignet sich hierfür Amazon Alexa oder der Google Assistant. 
 
 Das im Kapitel \ref{Beschreibung eines Natural User Interface} beschriebene \ac{NUI} wird nun auf der Microsoft HoloLens umgesetzt. Hierbei wird auf Einschränkungen und Möglichkeiten eingegangen. 
 
@@ -25,11 +25,11 @@ Um Anwendungen zu Debuggen und auf die HoloLens zu übertragen, wird ein C\# Proj
 \subsubsection{Grundlagen}
 Der Prototyp (im folgenden WorldBuilder) genannt, hat folgenden Grundaufbau.
 
-Eine Unity-Szene bildet den physischen Raum virtuel in der nach und diesen als Mesh an. Innerhalb deses raumes ist es dann möglich gelbe Blöcke zu setzen. 
+Eine Unity-Szene bildet den physischen Raum virtuel in der nach Szene und zeigt diesen als Mesh an. Innerhalb deses raumes ist es dann möglich gelbe Blöcke zu setzen. 
 
 Das \ac{NUI} soll nun die Steuerung dieser Szene wie in Abschnitt \ref{Beschreibung der Gesten und Sprachkommandos} übernehmen.
 
-In Abbildung \ref{WorldBuilder} ist die Unity Szene in Aktion zu sehen. Im Hintergrund befindet sich der physische Raum, welcher in die Szene integriert wird. Abgebildet wird dieser Raum innerhalb des WorldBuilder als Mesh um zu zeigen, wie der Raum von der HoloLens erkannt wurde. Dank des erkannten Raumes, können die Blöcke direkt innerhalb des Raumes auf dem Boden oder anderen Oberflächen positioniert werden.
+In Abbildung \ref{WorldBuilder} ist die Unity Szene in Aktion zu sehen. Im Hintergrund befindet sich der physische Raum, welcher in die Szene integriert wird. Abgebildet wird dieser Raum innerhalb des WorldBuilder als Mesh, um zu zeigen, wie der Raum von der HoloLens erkannt wurde. Dank des erkannten Raumes, können die Blöcke direkt innerhalb des Raumes auf dem Boden oder anderen Oberflächen positioniert werden.
 
 \begin{figure}[!ht]
 \centering
@@ -42,7 +42,7 @@ In Abbildung \ref{WorldBuilder} ist die Unity Szene in Aktion zu sehen. Im Hinte
 \subsubsection{Gestenentwicklung für die HoloLens}\label{Gestenentwicklung für die HoloLens}
 Die HoloLens unterstützt ab Werk zwei Gesten. Zum einen die Select-Geste und zum anderen die Home-Geste. In Abbildung \ref{HoloLens_Select} wird Select in der "`Ready"' Stellung gezeigt. Somit ist der Zeigefinger nach oben gerichtet und die anderen Finger bilden zusammen mit dem Daumen einen Tunnel. 
 
-Wird der Zeigefinger nun auf den Daumen bewegt ist es als würde der Nutzer einen "`Klick"' mit der Maustaste tätigen. Die Position der Hand ist dabei egal. Selektiert wird immer die Schaltfläche auf der der Cursor ruht, welcher sich immer in der Mitte des Sichtfeldes befindet und der sich mit den Kopfbewegungen des Nutzers mitbewegt.
+Wird der Zeigefinger nun auf den Daumen bewegt, ist es als würde der Nutzer einen "`Klick"' mit der Maustaste tätigen. Die Position der Hand ist dabei egal. Selektiert wird immer die Schaltfläche, auf der der Cursor ruht, welcher sich immer in der Mitte des Sichtfeldes befindet und der sich mit den Kopfbewegungen des Nutzers mitbewegt.
 
 \begin{figure}[!ht]
 \centering
@@ -52,7 +52,7 @@ Wird der Zeigefinger nun auf den Daumen bewegt ist es als würde der Nutzer einen
 \centering
 \end{figure}
 
-Die zweite Geste ist die Home-Geste, welche von der HoloLens selbst als "`Bloom"' bezeichnet wird. In Abbildung \ref{HoloLens_Bloom} ist diese Geste dargestellt. Die Handfläche zeigt nach oben wobei die Finger sich alle über der Handfläche berühren. Wird die Hand dann geöffnet, so erkennt die HoloLens die Bloom-Geste und öffnet das Home-Menü der HoloLens, beziehungsweise schließt es, wenn es bereits geöffnet ist.
+Die zweite Geste ist die Home-Geste, welche von der HoloLens selbst als "`Bloom"' bezeichnet wird. In Abbildung \ref{HoloLens_Bloom} ist diese Geste dargestellt. Die Handfläche zeigt nach oben, wobei die Finger sich alle über der Handfläche berühren. Wird die Hand dann geöffnet, so erkennt die HoloLens die Bloom-Geste und öffnet das Home-Menü der HoloLens, beziehungsweise schließt es, wenn es bereits geöffnet ist.
 
 \begin{figure}[!ht]
 \centering
@@ -74,25 +74,25 @@ Wird die Hand während der Hold-Geste nach oben, unten, links oder rechts bewegt,
 \centering
 \end{figure}
 
-Die HoloLens unterscheidet also drei Gesten, Select, Bloom und Hold. Um die Lernkurve gering zu halten und Nutzer nicht zu überfordern wurden laut Microsoft die Gesten auf diese drei beschränkt. Das hinzufügen eigener Gesten ist also nicht möglich. \cite{Gesture_Design}
+Die HoloLens unterscheidet also drei Gesten, Select, Bloom und Hold. Um die Lernkurve gering zu halten und Nutzer nicht zu überfordern, wurden laut Microsoft die Gesten auf diese drei beschränkt. Das hinzufügen eigener Gesten ist also nicht möglich. \cite{Gesture_Design}
 
 \paragraph{Neudefinition der Gesten} für die HoloLens.
-Die im Kapitel \ref{Beschreibung eines Natural User Interface} beschriebenen Gesten können technisch nicht umgesetzt werden. Wodurch die Gesten neu definiert werden müssen um den technischen Anforderungen und den eines \ac{NUI} gerecht zu werden.
+Die im Kapitel \ref{Beschreibung eines Natural User Interface} beschriebenen Gesten können technisch nicht umgesetzt werden, wodurch die Gesten neu definiert werden müssen um den technischen Anforderungen und den eines \ac{NUI} gerecht zu werden.
 
-\subparagraph{Das Setzen eines Blocks} sollte um den natürlich Fluss der HoloLens gerecht zu werden über die Select-Geste umgesetzt werden. Hierbei sollte der Cursor immer einen Block anzeigen, damit der Nutzer sieht wie er abgesetzt aussieht.
+\subparagraph{Das Setzen eines Blocks} sollte, um den natürlich Fluss der HoloLens gerecht zu werden, über die Select-Geste umgesetzt werden. Hierbei sollte der Cursor immer einen Block anzeigen, damit der Nutzer sieht wie er abgesetzt aussieht.
 
-\subparagraph{Das Löschen eines Blocks} wiederum kann entsprechend über eine Hold-Geste umgesetzt werden. Welche beim auslösen den entsprechenden Block löscht.
+\subparagraph{Das Löschen eines Blocks} wiederum kann entsprechend über eine Hold-Geste umgesetzt werden, welche beim auslösen den entsprechenden Block löscht.
 
-\subparagraph{Drehen von Objekten} das drehen von einzelnen Blöcken ist nicht Sinnvoll. Das Drehen von verbundenen Blöcken jedoch kann über die Zoom-Geste nach links oder rechts erreicht werden. Hierbei muss natürlich auf die Physik geachtet werden, den Objekte können nicht durch reale Gegenstände bewegt werden.
+\subparagraph{Drehen von Objekten} oder besser gesagt von einzelnen Blöcken ist nicht sinnvoll. Das Drehen von verbundenen Blöcken jedoch kann über die Zoom-Geste nach links oder rechts erreicht werden. Hierbei muss natürlich auf die Physik geachtet werden, denn Objekte können nicht durch reale Gegenstände bewegt werden.
 
 \subsubsection{Sprachkommandos für die HoloLens}\label{Sprachkommandos für die HoloLens}
-Die HoloLens verfügt wie mittlerweile jedes Windows 10 getriebene Gerät über eine Cortana-Instanz, welche den Nutzer unterstützt. Der Funktionsumfang ist jedoch gleich mit einem standard Windows 10. Innerhalb eines Programms kann Cortana jedoch nicht verwendet werden. 
+Die HoloLens verfügt wie mittlerweile jedes Windows 10 getriebene Gerät über eine Cortana-Instanz, welche den Nutzer unterstützt. Der Funktionsumfang ist gleich mit einem standard Windows 10. Innerhalb eines Programms kann Cortana jedoch nicht verwendet werden. 
 
-Technisch ist die Verwendung von Amazon Alexa oder dem Google Assistant innerhalb der Unity-Skripte zwar möglich, jedoch nicht zwingend notwendig, da Unity über die \ac{UWP}-API verfügt, verfügt es auch über die darin enthaltene SpeechRecognition-API. \cite{VoiceUnity}
+Technisch ist die Verwendung von Amazon Alexa oder dem Google Assistant innerhalb der Unity-Skripte zwar möglich, jedoch nicht zwingend notwendig, da Unity über die \ac{UWP}-API verfügt, besitzt es auch über die darin enthaltene SpeechRecognition-API. \cite{VoiceUnity}
 
 Über die Speech-API können direkt, innerhalb der Unity-Skripte, Schlüsselwörter angegeben werden. Werden sie erkannt, können ihnen zugewiesene Routinen ausgeführt werden.
 
-Dies Funktioniert zusätzlich über eine \ac{SRGS}-Grammatik welche schon im Abschnitt \ref{Beschreibung Sprachkommandos} beschrieben wurde.
+Dies funktioniert zusätzlich über eine \ac{SRGS}-Grammatik, welche schon im Abschnitt \ref{Beschreibung Sprachkommandos} beschrieben wurde.
 
 Es entfällt bei der Verwendung der HoloLens also ein Sprachassistent wie Alexa oder der Google Assistant und die damit verbundene Entwicklung von Skills. 
 
@@ -185,21 +185,21 @@ Der Code besteht aus Standard-Unity-Prefabs und der Quellcode des Skriptes ist t
 In den folgenden Abschnitten werden festgestellte Probleme bei der Entwicklung und mögliche Lösungen beschrieben.
 
 \subsubsection{Ungenauigkeiten bei der der Meshaufzeichnung}
-Die HoloLens scannt wärend des gesammten Betirebs unablässig die Umgebung und passt das Mesh immer wieder an. Hierdurch verändert sich der Untergund der Blöcke, welcher durch das Mesh abgebildet wird, was dazu führt das die Blöcke innerhalb der Szene zittern und sich gegebenfalls bewegen, wenn das Mesh aktualisiert wird.
+Die HoloLens scannt wärend des gesammten Betirebs unablässig die Umgebung und passt das Mesh immer wieder an. Hierdurch verändert sich der Untergund der Blöcke, welcher durch das Mesh abgebildet wird, was dazu führt, dass die Blöcke innerhalb der Szene zittern und sich gegebenfalls bewegen, wenn das Mesh aktualisiert wird.
 
-Ein Lösung des Problems wäre zum Beispiel die Physik der Blöcke abzuschalten, damit diese nicht auf die Bewegung des Bodens reagieren. 
+Eine Lösung des Problems wäre zum Beispiel die Physik der Blöcke abzuschalten, damit diese nicht auf die Bewegung des Bodens reagieren. 
 
 \subsubsection{Gestenlimitierung der HoloLens}
-Im Abschnitt \ref{Gestenentwicklung für die HoloLens} wurde beschrieben, dass die HoloLens nur die drei Gesten Select, Bloom und Hold beherrscht. Diese Limitierung ist nicht technischer Natur, sondern die Beschränkung wurde eingeführt um Nutzer nicht zu überfordern. 
+Im Abschnitt \ref{Gestenentwicklung für die HoloLens} wurde beschrieben, dass die HoloLens nur die drei Gesten Select, Bloom und Hold beherrscht. Diese Limitierung ist nicht technischer Natur, sondern die Beschränkung wurde eingeführt, um Nutzer nicht zu überfordern. 
 
-Bei der Entwicklung eines \ac{NUI} ist diese Beschränkung jedoch eher hinderlich. Zum Vergleich können Geräte wie zum Beispiel die "`Leap Motion"' viel mehr Gesten erkennen und verarbeiten. Die Leap Motion verfügt über eine Unity Integration, durch welche es Grundsätzlich möglich wäre Gesten zu erkennen und diese innerhalb der HoloLens Szene zu verarbeiten. \cite{LeapMotion}
+Bei der Entwicklung eines \ac{NUI} ist diese Beschränkung jedoch eher hinderlich. Zum Vergleich können Geräte wie zum Beispiel die "`Leap Motion"' viel mehr Gesten erkennen und verarbeiten. Die Leap Motion verfügt über eine Unity Integration, durch welche es Grundsätzlich möglich wäre, Gesten zu erkennen und diese innerhalb der HoloLens Szene zu verarbeiten. \cite{LeapMotion}
 
 \subsubsection{Sprachkommando Limitierung}
-Die HoloLens verfügt zum einen über Cortana, einen Assistenten, welcher aktuell nicht erweitern lässt. Aus diesem Grund, kann er auch nicht in Programme integriert werden. 
+Die HoloLens verfügt zum einen über Cortana, einen Assistenten, welcher sich aktuell nicht von Programmierern erweitern lässt. Aus diesem Grund kann er auch nicht in Programme integriert werden. 
 
-Wie in Abschnitt \ref{Sprachkommandos für die HoloLens} schon beschrieben ist es möglich über die in Unity integrierte \ac{UWP} Sprachkommandos zu implementieren. Hierbei gibt es aber auch eine Limitierung. Aktuell unterstützt Unity nur englischsprachige Kommandos. 
+Wie in Abschnitt \ref{Sprachkommandos für die HoloLens} schon beschrieben, ist es möglich, über die in Unity integrierte \ac{UWP} Sprachkommandos zu implementieren. Hierbei gibt es aber auch eine Limitierung. Aktuell unterstützt Unity nur englischsprachige Kommandos. 
 
-Da es sich bei der HoloLens aktuell um eine Entwickler-Gerät handelt, welches nicht auf dem freien Markt gibt ist diese Limitierung aber nicht dramatisch. Dass Interface muss lediglich mit englischer Sprache bedient werden. Die Umsetzung anderer Sprache ist aber abzusehen, da auch der Assistent Cortana schon in der deutschen Sprache verfügbar ist.
+Da es sich bei der HoloLens aktuell um ein Entwickler-Gerät handelt, welches nicht auf dem freien Markt gibt, ist diese Limitierung aber nicht dramatisch. Dass Interface muss lediglich mit englischer Sprache bedient werden. Die Umsetzung anderer Sprache ist aber abzusehen, da auch der Assistent Cortana schon in der deutschen Sprache verfügbar ist.
 
 \subsection{Auswertung des Programm in Hinsicht auf das geplante NUI}
 Im Kapitel \ref{Natural User Interfaces} wurde ein \ac{NUI} grundlegend beschrieben. Hierbei wurde erklärt, welche Dinge zu beachtet sind und wie eine Umsetzung geplant werden kann.
