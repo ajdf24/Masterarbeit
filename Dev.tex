@@ -1,4 +1,4 @@
-\section{Versuch der Entwicklung eines Natural User Interface anhand der Microsoft HoloLens}
+\section{Versuch der Entwicklung eines Natural User Interface anhand der Microsoft HoloLens}\label{Versuch der Entwicklung eines Natural User Interface anhand der Microsoft HoloLens}
 Im Kapitel \ref{Augmented Reality} wurde Untersucht, welches Gerät sich am besten zur Entwicklung eines \ac{NUI} eignet, um \ac{AR} Inhalte darzustellen und zu bearbeiten. Hierbei ergaben die Untersuchungen, dass die HoloLens das momentan beste Gerät auf dem Markt ist. 
 
 \begin{figure}[!ht]
@@ -22,6 +22,7 @@ Für die Entwicklung von Apps für die HoloLens wurde die Spieleengine Unity spezi
 
 Um Anwendungen zu Debuggen und auf die HoloLens zu übertragen, wird ein C\# Projekt von Unity erstellt, welche auf die \ac{AR}-Brille übertragen wird. \cite{HoloLensBild}
 
+\newpage
 \subsubsection{Grundlagen}
 Der Prototyp (im folgenden WorldBuilder) genannt, hat folgenden Grundaufbau.
 
@@ -42,8 +43,6 @@ In Abbildung \ref{WorldBuilder} ist die Unity Szene in Aktion zu sehen. Im Hinte
 \subsubsection{Gestenentwicklung für die HoloLens}\label{Gestenentwicklung für die HoloLens}
 Die HoloLens unterstützt ab Werk zwei Gesten. Zum einen die Select-Geste und zum anderen die Home-Geste. In Abbildung \ref{HoloLens_Select} wird Select in der "`Ready"' Stellung gezeigt. Somit ist der Zeigefinger nach oben gerichtet und die anderen Finger bilden zusammen mit dem Daumen einen Tunnel. 
 
-Wird der Zeigefinger nun auf den Daumen bewegt, ist es als würde der Nutzer einen "`Klick"' mit der Maustaste tätigen. Die Position der Hand ist dabei egal. Selektiert wird immer die Schaltfläche, auf der der Cursor ruht, welcher sich immer in der Mitte des Sichtfeldes befindet und der sich mit den Kopfbewegungen des Nutzers mitbewegt.
-
 \begin{figure}[!ht]
 \centering
 \includegraphics[width=6cm]{Bilder/select.png}
@@ -51,6 +50,12 @@ Wird der Zeigefinger nun auf den Daumen bewegt, ist es als würde der Nutzer eine
 \label{HoloLens_Select}
 \centering
 \end{figure}
+
+\FloatBarrier
+
+Wird der Zeigefinger nun auf den Daumen bewegt, ist es als würde der Nutzer einen "`Klick"' mit der Maustaste tätigen. Die Position der Hand ist dabei egal. Selektiert wird immer die Schaltfläche, auf der der Cursor ruht, welcher sich immer in der Mitte des Sichtfeldes befindet und der sich mit den Kopfbewegungen des Nutzers mitbewegt.
+
+
 
 Die zweite Geste ist die Home-Geste, welche von der HoloLens selbst als "`Bloom"' bezeichnet wird. In Abbildung \ref{HoloLens_Bloom} ist diese Geste dargestellt. Die Handfläche zeigt nach oben, wobei die Finger sich alle über der Handfläche berühren. Wird die Hand dann geöffnet, so erkennt die HoloLens die Bloom-Geste und öffnet das Home-Menü der HoloLens, beziehungsweise schließt es, wenn es bereits geöffnet ist.
 
@@ -130,9 +135,9 @@ Die Start Methode, ist in Unity-Skripten der Konstruktor, welche einmal zum Star
 Im ersten Teil des NUI-Skripts \ref{NUI_Start} (Zeilen 3-13) werden alle vom Skript benötigten Komponenten geladen. In Zeile 13 werden über einen Methodenaufruf alle "`Keywords"' generiert, auf welche das NUI reagieren soll. Daraufhin, wird der "`KeywordRecognizer"' mit den erstellten Keywords erstellt und gestartet (Zeilen 17-21).
 
 Als nächster Schritt, wird der "`GestureRecognizer"' erstellt und definiert, was bei einer erkannten Tap-Geste geschehen soll (Zeile 24-25). Wird ein Tap erkannt, wird ein Raycast von der Kameramitte ausgeführt. Trifft der Raycast ein Objekt so wird ein neuer Würfel gesetzt oder der getroffene Würfel entfernt, je nachdem ob der Nutzer gerade im Setzen- oder Entfernenmodus ist.
-
+\newpage
 \lstinputlisting[language=C,caption=Start Methode des NUI-Skripts, label=NUI_Start, captionpos=b]{Code/NUI_Start.cs}
-
+\newpage
 Im weiteren Verlauf des Skrips sind unzählige Keywords definiert und was passieren soll, wenn der KeywordRecognizer diesen Befehl erkennt. Im Listing \ref{NUI_Keyword} ist dies einmal beispielhaft dargestellt. Es wird dem "`Dictionary"' "`keywords"' ein Schlüssel-Wert-Paar hinzugefügt. Dies ist zum einen der Befehl als String und die Definition, welche ausgeführt wird wenn das Keyword erkannt wird. Im Beispiel wird die Methode "`SelectYellowCube"' ausgeführt.
 
 \lstinputlisting[language=C,caption=Keyword Erstellung, label=NUI_Keyword, captionpos=b]{Code/NUI_Keyword.cs}
@@ -147,7 +152,7 @@ Die Hauptaufgabe des "`SpeechController"' ist das heranführen des Nutzers an das
 Die Text zu Sprache Funktion ist Bestandteil des MixedRealityToolkit, wobei vier Stimmen zur Auswahl stehen. Im Listing \ref{Speech} ist die erste Initialisierung zu sehen. Es wird in Zeile 4 eine Stimme ausgewählt. Danach kann ein Text übergeben werden, welcher durch Sprachsynthese eine Audioausgabe generiert. 
 
 \lstinputlisting[language=C,caption=Testausgabe, label=Speech, captionpos=b]{Code/Speech.cs}
-
+\newpage
 "`TextToSpeech"' kann zur Zeit nur in englisch genutzt werden. Zwar kann auch ein anderssprachiger Satz eingegeben werden, hierbei ist aber die Ausgabe schlecht, da das Framework auf englischer Sprachbetonung basiert. 
 
 Damit sich die Sprachausgabe nicht überlagert muss vor der Verarbeitung des zweiten Textes geprüft werden, ob die vorherige Ausgabe beendet ist. Dies geschieht über zwei Methoden, wie im Listing \ref{Speech_While} beispielhaft zu sehen ist. 
@@ -170,7 +175,7 @@ Im Listing \ref{World_Update} wird in Zeile 8 der Raycast durchgeführt. Trifft d
 Ist der Remove-Modus deaktiviert, so wird in den Zeilen 23-29 der Würfel-Cursor aktiviert und zum richtigen Punkt bewegt.
 
 Trifft der Raycast nicht, so wird in den Zeilen 34-37 der Text der Nachricht, welche angibt das der Raum geladen wird, angezeigt.
-
+\newpage
 \lstinputlisting[language=C,caption=Anzeigen des WorldCursor, label=World_Update, captionpos=b]{Code/World_Update.cs}
 
 \subsection{Der UIController}
@@ -180,7 +185,7 @@ Es wird im oberen linken Bildschirmbereich ein Quadrat in der aktuellen Farbe de
 
 Die Anzeige dient lediglich zur Unterstützung des Nutzers, hat aber keine funktionale Bedeutung. 
 Der Code besteht aus Standard-Unity-Prefabs und der Quellcode des Skriptes ist trivial, weshalb hier auf ein Programmierbeispiel verzichtet wird.
-
+\newpage
 \subsection{Probleme bei der Entwicklung}
 In den folgenden Abschnitten werden festgestellte Probleme bei der Entwicklung und mögliche Lösungen beschrieben.
 
